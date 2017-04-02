@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
 
 class Home extends Component {
   render () {
@@ -36,9 +36,9 @@ class Navigation extends Component {
   render () {
     return (
       <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/car'>Cars</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/car'>Cars</NavLink></li>
+        <li><NavLink to='/about'>About</NavLink></li>
       </ul>
     )
   }
