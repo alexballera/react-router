@@ -5,3 +5,6 @@
     npm run watch
 
     npm run serve
+
+
+// "serve": "serve ./public"

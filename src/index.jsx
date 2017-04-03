@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
+require('./App.scss')
 
 class Navigation extends Component {
   render () {

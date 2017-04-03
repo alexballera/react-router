@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack -d --watch",
-    "build": "webpack",
+    "test": "standard",
+    "watch": "webpack -d -w --colors",
+    "build": "webpack -p -w --colors",
+    "start": "npm run test && npm run watch",
     "serve": "serve ./public"
   },
   "repository": {
@@ -27,14 +28,21 @@
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.1",
     "babel-loader": "^6.4.1",
     "babel-preset-env": "^1.3.2",
     "babel-preset-react": "^6.23.0",
     "css-loader": "^0.28.0",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
     "serve": "^5.1.2",
+    "standard": "^9.0.2",
+    "standard-loader": "^6.0.1",
     "style-loader": "^0.16.1",
-    "webpack": "^2.3.2"
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
   }
 }
