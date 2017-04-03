@@ -1,8 +1,12 @@
 @charset 'UTF-8';
 @import '../scss/variables';
 
-.home {
+.titulo {
   h1 {
     color: $yellow;
   }
+}
+
+.sub-titulo {
+  color: $orange;
 }

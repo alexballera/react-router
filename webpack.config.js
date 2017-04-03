@@ -1,11 +1,14 @@
-var webpack = require('webpack')
-var path = require('path')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-var APP_DIR = path.resolve(__dirname, 'src')
-var BUILD_DIR = path.resolve(__dirname, 'public')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const cssnano = require('cssnano')
 
-var config = {
+const APP_DIR = path.resolve(__dirname, 'src')
+const BUILD_DIR = path.resolve(__dirname, 'public')
+
+const config = {
   entry: APP_DIR + '/index.jsx',
   output: {
     path: BUILD_DIR,
@@ -66,6 +69,16 @@ var config = {
       },
       sourceMap: true,
       extractComments: true
+    }),
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssnano,
+      cssProcessorOptions: {
+        discardComments: {
+          removeAll: true
+        },
+        safe: true
+      },
+      canPrint: false
     })
   ]
 }
