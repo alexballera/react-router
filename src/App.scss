@@ -1,6 +1,9 @@
+@charset 'UTF-8';
+@import './scss/variables';
+
 body,
 h1 {
-  background-color: cyan;
-  color: magenta;
+  background-color: $cyan;
+  color: $magenta;
 }
 

@@ -31,7 +31,11 @@ var config = {
         test: /\.jsx?/,
         include: APP_DIR,
         exclude: /node_modules/,
-        loader: ['babel-loader', 'eslint-loader']
+        loader: [
+          'react-hot-loader',
+          'babel-loader',
+          'eslint-loader'
+        ]
       },
       {
         test: /\.scss$/,

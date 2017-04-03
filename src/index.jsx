@@ -1,39 +1,26 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
-require('./App.scss')
+import Home from './home/home.component.jsx'
+import './App.scss'
 
 class Navigation extends Component {
   render () {
     return (
       <ul>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/car'>Cars</NavLink></li>
-        <li><NavLink to='/about'>About</NavLink></li>
         <li><NavLink to='/topics'>Topics</NavLink></li>
+        <li><NavLink to='/about'>About</NavLink></li>
+        <li><NavLink to='/blog'>Blog</NavLink></li>
       </ul>
     )
   }
 }
 
-class Home extends Component {
-  render () {
-    if (this.props.children) {
-      return this.props.children
-    } else {
-      return (
-        <div>
-          <h1>Página Home</h1>
-        </div>
-      )
-    }
-  }
-}
-
-class Car extends Component {
+class Blog extends Component {
   render () {
     return (
-      <h1>Página Car</h1>
+      <h1>Página Blog</h1>
     )
   }
 }
@@ -86,9 +73,9 @@ render(
       <Navigation />
       <hr />
       <Route exact path='/' component={Home} />
-      <Route path='/car' component={Car} />
-      <Route path='/about' component={About} />
       <Route path='/topics' component={Topics} />
+      <Route path='/blog' component={Blog} />
+      <Route path='/about' component={About} />
     </div>
   </Router>,
   document.getElementById('container')
