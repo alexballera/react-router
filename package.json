@@ -8,7 +8,7 @@
     "watch": "webpack -d -w --colors --display-modules",
     "build": "webpack -p -w --colors",
     "start": "npm run test && npm run watch",
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server --env development --open"
   },
   "repository": {
     "type": "git",

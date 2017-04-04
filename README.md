@@ -8,3 +8,5 @@
 
 
 // "serve": "serve ./public"
+
+// "start": "npm run test && npm run watch"

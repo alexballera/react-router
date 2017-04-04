@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const APP_DIR = path.resolve(__dirname, 'src')
 const BUILD_DIR = path.resolve(__dirname, 'public')
 
-const config = {
+const commonConfig = {
   entry: APP_DIR + '/index.jsx',
   output: {
     path: BUILD_DIR,
@@ -74,11 +74,7 @@ const config = {
   devServer: {
     host: '0.0.0.0',
     port: 8080,
-    contentBase: path.join(__dirname, 'public'),
-    compress: true,
-    inline: true,
-    hot: true,
-    lazy: true
+    contentBase: path.join(__dirname, 'public')
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -114,4 +110,16 @@ const config = {
     })
   ]
 }
-module.exports = config
+
+module.exports = (env) => {
+  console.log('env', env)
+
+  return commonConfig
+}
+
+/*,
+    compress: true,
+    inline: true,
+    hot: true,
+    lazy: true
+*/
