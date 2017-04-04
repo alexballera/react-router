@@ -11,6 +11,7 @@ module.exports = {
             options: {
               plugins: function () {
                 return [
+                  require('postcss-smart-import'),
                   require('precss'),
                   require('autoprefixer')
                 ]

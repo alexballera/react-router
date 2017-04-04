@@ -14,6 +14,7 @@ const config = {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -45,7 +46,24 @@ const config = {
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           filename: 'style.css',
-          use: ['css-loader', 'postcss-loader', 'sass-loader'],
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                importLoaders: 1
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: 'inline'
+              }
+            },
+            {
+              loader: 'sass-loader'
+            }
+          ],
           allChunks: true
         })
       }
