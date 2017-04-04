@@ -45,7 +45,7 @@ const config = {
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           filename: 'style.css',
-          use: ['css-loader', 'sass-loader'],
+          use: ['css-loader', 'postcss-loader', 'sass-loader'],
           allChunks: true
         })
       }

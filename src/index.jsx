@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {render} from 'react-dom'
 import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
 import Home from './home/home.component.jsx'
+import Blog from './blog/blog.component.jsx'
+import About from './about/about.component.jsx'
 import './App.scss'
 
 class Navigation extends Component {
@@ -11,24 +13,8 @@ class Navigation extends Component {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/topics'>Topics</NavLink></li>
         <li><NavLink to='/about'>About</NavLink></li>
-        <li><NavLink to='/blog'>Blog</NavLink></li>
+        <li><NavLink to='/blog'>Blo</NavLink></li>
       </ul>
-    )
-  }
-}
-
-class Blog extends Component {
-  render () {
-    return (
-      <h1>Página Blog</h1>
-    )
-  }
-}
-
-class About extends Component {
-  render () {
-    return (
-      <h1>Página About</h1>
     )
   }
 }

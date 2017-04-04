@@ -2,6 +2,9 @@
 @import '../scss/variables';
 
 .titulo {
+  display: flex;
+  flex-flow: row wrap;
+
   h1 {
     color: $yellow;
   }
