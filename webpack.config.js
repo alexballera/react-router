@@ -1,9 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const cssnano = require('cssnano')
+
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const APP_DIR = path.resolve(__dirname, 'src')
 const BUILD_DIR = path.resolve(__dirname, 'public')
@@ -79,6 +81,18 @@ const config = {
     lazy: true
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Practica React Webpack',
+      filename: './index.html',
+      inject: true | 'head' | 'body',
+      showErrors: true,
+      minify: {
+        collapseInlineTagWhitespace: true,
+        collapseWhitespace: true,
+        removeComments: true,
+        removeScriptTypeAttributes: true
+      }
+    }),
     new ExtractTextPlugin('style.css'),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

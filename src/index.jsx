@@ -6,6 +6,12 @@ import Blog from './blog/blog.component.jsx'
 import About from './about/about.component.jsx'
 import './App.scss'
 
+(() => {
+  var div = document.createElement('div')
+  div.setAttribute('id', 'container')
+  document.body.prepend(div)
+})()
+
 class Navigation extends Component {
   render () {
     return (
