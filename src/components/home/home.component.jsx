@@ -19,6 +19,8 @@ class Home extends React.Component {
           />
           <div className='titulo'>
             <h1>Pagina Home</h1>
+            <i className='fa fa-telegram' />
+
             <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
             <img src={imagen} />
           </div>
