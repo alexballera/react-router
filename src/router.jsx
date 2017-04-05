@@ -1,11 +1,11 @@
 'use strict'
 import React from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import Navigation from './navigation/navigation.component.jsx'
-import Home from './home/home.component.jsx'
-import Blog from './blog/blog.component.jsx'
-import About from './about/about.component.jsx'
-import Topics from './topics/topic.component.jsx'
+import Navigation from './components/navigation/navigation.component.jsx'
+import Home from './components/home/home.component.jsx'
+import Blog from './components/blog/blog.component.jsx'
+import About from './components/about/about.component.jsx'
+import Topics from './components/topics/topic.component.jsx'
 
 class Routers extends React.Component {
   render () {

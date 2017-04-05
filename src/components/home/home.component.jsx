@@ -1,7 +1,7 @@
 'use strict'
 import React from 'react'
 import './home.scss'
-import imagen from '../images/disney-logo.jpg'
+import imagen from '../../static/images/disney-logo.jpg'
 import {Helmet} from 'react-helmet'
 
 class Home extends React.Component {
