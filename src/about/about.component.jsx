@@ -3,6 +3,7 @@ import './about.scss'
 
 import React from 'react'
 import {Helmet} from 'react-helmet'
+import imagen from '../images/disney-logo.jpg'
 
 class About extends React.Component {
   render () {
@@ -15,6 +16,7 @@ class About extends React.Component {
           ]}
         />
         <h1 className='about-title'>Página Acerca</h1>
+        <img src={imagen} />
       </div>
     )
   }
