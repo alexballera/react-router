@@ -7,6 +7,7 @@ const cssnano = require('cssnano')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const APP_DIR = path.resolve(__dirname, 'src')
 const BUILD_DIR = path.resolve(__dirname, 'public')
@@ -122,7 +123,8 @@ const developmentConfig = () => {
           safe: true
         },
         canPrint: false
-      })
+      }),
+      new FaviconsWebpackPlugin({logo: './favicon.png', inject: true})
     ]
   }
   return Object.assign(
@@ -134,10 +136,3 @@ const developmentConfig = () => {
 module.exports = (env) => {
   return developmentConfig()
 }
-
-/*,
-    compress: true,
-    inline: true,
-    hot: true,
-    lazy: true
-*/
