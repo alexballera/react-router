@@ -78,32 +78,6 @@ const developmentConfig = () => {
             name: 'images/[name]-[sha512:hash:base64:7].[ext]'
           }
         }
-       /* {
-          test: /\.(gif|png|jpe?g|svg)$/,
-          loader: 'file-loader'
-        } */
-   /*     {
-          test: /\.(gif|png|jpe?g|svg)$/,
-          loaders: [
-            'file-loader',
-            {
-              loader: 'image-webpack-loader',
-              query: {
-                progressive: true,
-                gifsicle: {
-                  interlaced: false
-                },
-                OptiPNG: {
-                  optimizationLevel: 7
-                },
-                pngquant: {
-                  quality: '65-90',
-                  speed: 4
-                }
-              }
-            }
-          ]
-        } */
       ]
     },
     devServer: {
