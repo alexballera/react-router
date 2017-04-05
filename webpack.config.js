@@ -6,6 +6,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const cssnano = require('cssnano')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const APP_DIR = path.resolve(__dirname, 'src')
 const BUILD_DIR = path.resolve(__dirname, 'public')
@@ -75,7 +76,7 @@ const developmentConfig = () => {
           loader: 'url-loader',
           query: {
             limit: 10000,
-            name: 'images/[name]-[sha512:hash:base64:7].[ext]'
+            name: 'images/[name].[ext]'
           }
         }
       ]
@@ -90,6 +91,7 @@ const developmentConfig = () => {
       inline: true
     },
     plugins: [
+      new CleanWebpackPlugin('public'),
       new HtmlWebpackPlugin({
         title: 'Practica React Webpack',
         filename: './index.html',
