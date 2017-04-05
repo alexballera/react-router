@@ -3,6 +3,9 @@
 
 .blog {
   &-title {
+    background-image: url('../../static/images/banner.jpg');
+    background-repeat: repeat;
     color: $purple;
+    height: 400px;
   }
 }
