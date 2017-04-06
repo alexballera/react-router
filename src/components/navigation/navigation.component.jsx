@@ -8,7 +8,7 @@ class Navigation extends React.Component {
     return (
       <div>
         <a className='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
-        <ul classID='dropdown1' className='dropdown-content'>
+        <ul id='dropdown1' className='dropdown-content'>
           <li><NavLink to='/'>Home</NavLink></li>
           <li><NavLink to='/topics'>Topics</NavLink></li>
           <li><NavLink to='/about'>About</NavLink></li>

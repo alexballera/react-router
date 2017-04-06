@@ -115,7 +115,6 @@ const developmentConfig = () => {
         filename: './index.html',
         template: './src/index.ejs',
         inject: true | 'head' | 'body',
-        showErrors: true,
         minify: {
           collapseInlineTagWhitespace: true,
           collapseWhitespace: true,
