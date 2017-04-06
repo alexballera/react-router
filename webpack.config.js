@@ -14,12 +14,19 @@ const BUILD_DIR = path.resolve(__dirname, 'public')
 
 const developmentConfig = () => {
   const config = {
-    entry: APP_DIR + '/index.jsx',
+    entry: {
+      main: APP_DIR + '/index.jsx'
+    },
+
     output: {
       path: BUILD_DIR,
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      sourceMapFilename: '[name].map',
+      chunkFilename: '[id].chunk.js'
     },
+
     devtool: 'eval-source-map',
+
     module: {
       rules: [
         {
@@ -33,6 +40,8 @@ const developmentConfig = () => {
             parser: 'babel-eslint'
           }
         },
+
+        // Javascript
         {
           test: /\.jsx?/,
           include: APP_DIR,
@@ -43,6 +52,8 @@ const developmentConfig = () => {
             'eslint-loader'
           ]
         },
+
+        // Estilos
         {
           test: /\.scss$/,
           loader: ExtractTextPlugin.extract({
@@ -69,6 +80,7 @@ const developmentConfig = () => {
             allChunks: true
           })
         },
+
         // Imagenes
         {
           test: /\.(gif|png|jpe?g|svg)$/,
@@ -78,12 +90,14 @@ const developmentConfig = () => {
             name: 'images/[name].[ext]'
           }
         },
+
         // Fonts
         { test: /\.(eot|svg|ttf|woff|woff2)$/,
           loader: 'file-loader?name=fonts/[name]/[name].[ext]'
         }
       ]
     },
+
     devServer: {
       host: '0.0.0.0',
       port: 8080,
@@ -93,11 +107,13 @@ const developmentConfig = () => {
       compress: true,
       inline: true
     },
+
     plugins: [
       new CleanWebpackPlugin('public'),
       new HtmlWebpackPlugin({
         title: 'Practica React Webpack',
         filename: './index.html',
+        template: './src/index.ejs',
         inject: true | 'head' | 'body',
         showErrors: true,
         minify: {
@@ -108,6 +124,10 @@ const developmentConfig = () => {
         }
       }),
       new ExtractTextPlugin('style.css'),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
+      }),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: false,
