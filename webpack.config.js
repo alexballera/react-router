@@ -12,7 +12,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const APP_DIR = path.resolve(__dirname, 'src')
 const BUILD_DIR = path.resolve(__dirname, 'public')
 
-const developmentConfig = () => {
+const devConfig = () => {
   const config = {
     entry: {
       main: APP_DIR + '/index.jsx'
@@ -109,6 +109,9 @@ const developmentConfig = () => {
     },
 
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }),
       new CleanWebpackPlugin('public'),
       new HtmlWebpackPlugin({
         title: 'Practica React Webpack',
@@ -135,6 +138,7 @@ const developmentConfig = () => {
         sourceMap: true,
         extractComments: true
       }),
+      new webpack.optimize.AggressiveMergingPlugin(),
       new OptimizeCSSAssetsPlugin({
         cssProcessor: cssnano,
         cssProcessorOptions: {
@@ -153,7 +157,28 @@ const developmentConfig = () => {
     config
   )
 }
+const prodConfig = () => {
+  const config = {
+  }
+  return Object.assign(
+    {},
+    config
+  )
+}
 
 module.exports = (env) => {
-  return developmentConfig()
+  if (process.env.NODE_ENV !== 'production') {
+    return devConfig()
+  } else {
+    return prodConfig()
+  }
 }
+
+/* module.exports = (env) => {
+  if (env === 'development') {
+    return devConfig()
+  } else {
+    return prodConfig()
+  }
+}
+*/

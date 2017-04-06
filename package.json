@@ -6,7 +6,7 @@
   "scripts": {
     "test": "standard",
     "build": "webpack -p -w",
-    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development --open -d --colors\""
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development --open\""
   },
   "repository": {
     "type": "git",
