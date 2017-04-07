@@ -10,6 +10,7 @@ module.exports = (env) => {
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15}),
       new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000}),
+      new webpack.optimize.AggressiveMergingPlugin(),
       new FaviconsWebpackPlugin({logo: './favicon.png', inject: true}),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
@@ -22,7 +23,6 @@ module.exports = (env) => {
         sourceMap: true,
         extractComments: true
       }),
-      new webpack.optimize.AggressiveMergingPlugin(),
       new OptimizeCSSAssetsPlugin({
         cssProcessor: cssnano,
         cssProcessorOptions: {
