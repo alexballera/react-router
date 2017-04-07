@@ -3,10 +3,10 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const cssnano = require('cssnano')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const merge = require('webpack-merge')
-const common = require('./webpack.config.base')
+const base = require('./webpack.config.base')
 
 module.exports = (env) => {
-  return merge(common(), {
+  return merge(base(), {
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15}),
       new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000}),
