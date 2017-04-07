@@ -8,6 +8,9 @@ const common = require('./webpack.config.base')
 module.exports = (env) => {
   return merge(common(), {
     plugins: [
+      new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15}),
+      new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000}),
+      new FaviconsWebpackPlugin({logo: './favicon.png', inject: true}),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
@@ -29,8 +32,7 @@ module.exports = (env) => {
           safe: true
         },
         canPrint: false
-      }),
-      new FaviconsWebpackPlugin({logo: './favicon.png', inject: true})
+      })
     ]
   })
 }

@@ -5,8 +5,6 @@ const common = require('./webpack.config.base')
 
 module.exports = (env) => {
   return merge(common(), {
-    devtool: 'eval-source-map',
-
     devServer: {
       host: '0.0.0.0',
       port: 8080,

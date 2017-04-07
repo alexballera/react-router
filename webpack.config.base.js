@@ -18,6 +18,8 @@ module.exports = () => {
       chunkFilename: '[id].chunk.js'
     },
 
+    devtool: 'eval-source-map',
+
     module: {
       rules: [
         {
