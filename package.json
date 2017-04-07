@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
-    "build": "webpack --env=prod -w -p --progress --profile --colors --json > tree.json",
+    "build": "webpack --env=prod -w -p --progress --profile --colors",
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env dev --open\""
   },
   "repository": {
