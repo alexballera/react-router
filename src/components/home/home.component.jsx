@@ -17,7 +17,7 @@ class Home extends React.Component {
               {'name': 'home description', 'content': 'Home Helmet application'}
             ]}
           />
-          <div className='titulo'>
+          <div className='titulo cssgradients'>
             <h1>Pagina Home</h1>
             <i className='fa fa-telegram' />
 
