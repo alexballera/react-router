@@ -2,9 +2,10 @@
 
 import React from 'react'
 import {Route, NavLink} from 'react-router-dom'
+import styles from './topic.style'
 
 const Topics = ({ match }) => (
-  <div>
+  <div style={styles.contanier}>
     <h2>Topics</h2>
     <ul>
       <li>
@@ -26,7 +27,7 @@ const Topics = ({ match }) => (
 
     <Route path={`${match.url}/:topicId`} component={Topic} />
     <Route exact path={match.url} render={() => (
-      <h3>Please select a topic.</h3>
+      <h3 style={styles.subtitulo}>Please select a topic.</h3>
     )} />
   </div>
 )
