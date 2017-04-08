@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-const path = require('path')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const cssnano = require('cssnano')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
@@ -9,22 +8,6 @@ const base = require('./webpack.config.base')
 
 module.exports = (env) => {
   return merge(base(), {
-    module: {
-      rules: [
-        {
-          test: /\.modernizrrc.js$/,
-          loader: 'modernizr'
-        },
-        {
-          test: /\.modernizrrc(\.json)?$/,
-          loader: 'modernizr!json'
-        }
-      ]},
-    resolve: {
-      alias: {
-        modernizr$: path.resolve(__dirname, '/.modernizrrc')
-      }
-    },
     plugins: [
       new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15}),
       new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000}),

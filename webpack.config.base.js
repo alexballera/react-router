@@ -86,8 +86,23 @@ module.exports = () => {
         // Fonts
         { test: /\.(eot|svg|ttf|woff|woff2)$/,
           loader: 'file-loader?name=fonts/[name]/[name].[ext]'
+        },
+
+        // Modernizr
+        {
+          test: /\.modernizrrc.js$/,
+          loader: 'modernizr-loader'
+        },
+        {
+          test: /\.modernizrrc(\.json)?$/,
+          loader: 'modernizr-loader!json-loader'
         }
       ]
+    },
+    resolve: {
+      alias: {
+        modernizr$: path.resolve(__dirname, '.modernizrrc')
+      }
     },
     plugins: [
       new CleanWebpackPlugin('public'),

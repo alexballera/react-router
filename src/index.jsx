@@ -1,6 +1,7 @@
 import React from 'react'
 import {render} from 'react-dom'
 import Routers from './router.jsx'
+import 'modernizr'
 
 window.jQuery = require('jquery')
 window.$ = require('jquery')

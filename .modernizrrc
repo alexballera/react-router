@@ -1,6 +1,4 @@
 {
-  "minify": true,
-  "classPrefix": "",
   "options": [
     "html5shiv",
     "html5printshiv",
@@ -12,11 +10,11 @@
     "setClasses"
   ],
   "feature-detects": [
-    a/download",
-    cookies",
+    "a/download",
+    "cookies",
     "cors",
     "custom-elements",
-    css/all",
+    "css/all",
     "css/animations",
     "css/appearance",
     "css/backdropfilter",
