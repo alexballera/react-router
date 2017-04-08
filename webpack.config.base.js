@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const APP_DIR = path.resolve(__dirname, 'src')
 const BUILD_DIR = path.resolve(__dirname, 'public')
@@ -22,6 +21,8 @@ module.exports = () => {
 
     module: {
       rules: [
+
+        // Javascript
         {
           enforce: 'pre',
           test: /\.jsx?$/,
@@ -33,8 +34,6 @@ module.exports = () => {
             parser: 'babel-eslint'
           }
         },
-
-        // Javascript
         {
           test: /\.jsx?/,
           include: APP_DIR,
@@ -92,18 +91,6 @@ module.exports = () => {
     },
     plugins: [
       new CleanWebpackPlugin('public'),
-      new HtmlWebpackPlugin({
-        title: 'Practica React Webpack',
-        filename: './index.html',
-        template: './src/index.ejs',
-        inject: true | 'head' | 'body',
-        minify: {
-          collapseInlineTagWhitespace: true,
-          collapseWhitespace: true,
-          removeComments: true,
-          removeScriptTypeAttributes: true
-        }
-      }),
       new ExtractTextPlugin('style.css'),
       new webpack.ProvidePlugin({
         $: 'jquery',

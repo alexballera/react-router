@@ -11,12 +11,10 @@ import '../node_modules/materialize-css/sass/materialize.scss'
 import 'materialize-css'
 
 import prueba from './static/js/jquery.prueba'
+import customDom from './static/js/custom-dom'
 
 (() => {
-  var div = document.createElement('div')
-  div.setAttribute('id', 'app')
-  document.body.prepend(div)
-
+  customDom()
   prueba()
 })()
 

@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const cssnano = require('cssnano')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
 const base = require('./webpack.config.base')
 
@@ -32,6 +33,18 @@ module.exports = (env) => {
           safe: true
         },
         canPrint: false
+      }),
+      new HtmlWebpackPlugin({
+        title: 'Practica React Webpack',
+        filename: './index.html',
+        // template: './src/index.ejs',
+        inject: true | 'head' | 'body',
+        minify: {
+          collapseInlineTagWhitespace: true,
+          collapseWhitespace: true,
+          removeComments: true,
+          removeScriptTypeAttributes: true
+        }
       })
     ]
   })
