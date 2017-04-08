@@ -3,6 +3,7 @@ import React from 'react'
 import './home.scss'
 import imagen from '../../static/images/disney-logo.jpg'
 import {Helmet} from 'react-helmet'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Home extends React.Component {
   render () {
@@ -14,16 +15,23 @@ class Home extends React.Component {
           <Helmet
             title={'Practica React Webpack'}
             meta={[
-              {'name': 'home description', 'content': 'Home Helmet application'}
+                {'name': 'home description', 'content': 'Home Helmet application'}
             ]}
-          />
-          <div className='titulo cssgradients'>
-            <h1>Pagina Home</h1>
-            <i className='fa fa-telegram' />
+            />
+          <ReactCSSTransitionGroup
+            transitionName='animate'
+            transitionAppear
+            transitionAppearTimeout={1000}
+            transitionEnter={false}
+            transitionLeave={false}>
+            <div className='titulo cssgradients'>
+              <h1>Pagina Home</h1>
+              <i className='fa fa-telegram' />
 
-            <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
-            <img src={imagen} />
-          </div>
+              <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
+              <img src={imagen} />
+            </div>
+          </ReactCSSTransitionGroup>
         </div>
       )
     }
