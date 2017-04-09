@@ -8,7 +8,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 class Blog extends React.Component {
   render () {
     return (
-      <div>
+      <div className='container'>
         <Helmet
           title={'Blog Practica React Webpack'}
           meta={[

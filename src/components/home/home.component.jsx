@@ -4,6 +4,7 @@ import './home.scss'
 import imagen from '../../static/images/disney-logo.jpg'
 import {Helmet} from 'react-helmet'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import Componente1 from './components/component1.jsx'
 
 class Home extends React.Component {
   render () {
@@ -11,7 +12,7 @@ class Home extends React.Component {
       return this.props.children
     } else {
       return (
-        <div>
+        <div className='container' >
           <Helmet
             title={'Practica React Webpack'}
             meta={[
@@ -27,10 +28,10 @@ class Home extends React.Component {
             <div className='titulo cssgradients'>
               <h1>Pagina Home</h1>
               <i className='fa fa-telegram' />
-
               <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
               <img src={imagen} />
             </div>
+            <Componente1 />
           </ReactCSSTransitionGroup>
         </div>
       )

@@ -12,7 +12,7 @@ const Topics = ({ match }) => (
     transitionAppearTimeout={1000}
     transitionEnter={false}
     transitionLeave={false}>
-    <div style={styles.contanier}>
+    <div style={styles.contanier} className='container'>
       <h2>Topics</h2>
       <ul>
         <li>
@@ -31,7 +31,6 @@ const Topics = ({ match }) => (
           </NavLink>
         </li>
       </ul>
-
       <Route path={`${match.url}/:topicId`} component={Topic} />
       <Route exact path={match.url} render={() => (
         <h3 style={styles.subtitulo}>Please select a topic.</h3>

@@ -9,7 +9,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 class About extends React.Component {
   render () {
     return (
-      <div>
+      <div className='container'>
         <Helmet
           title={'About Practica React Webpack'}
           meta={[
