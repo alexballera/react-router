@@ -6,6 +6,7 @@ import Blog from './components/blog/blog.component.jsx'
 import Home from './components/home/home.component.jsx'
 import Navigation from './components/navigation/navigation.component.jsx'
 import Topics from './components/topics/topic.component.jsx'
+import NoMatch from './components/NoMatch/NoMatch.component.jsx'
 
 class Routers extends React.Component {
   render () {
@@ -18,6 +19,7 @@ class Routers extends React.Component {
           <Route path='/topics' component={Topics} />
           <Route path='/blog' component={Blog} />
           <Route path='/about' component={About} />
+          <Route component={NoMatch} />
         </div>
       </Router>
     )
