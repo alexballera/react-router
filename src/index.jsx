@@ -14,12 +14,12 @@ import 'modernizr'
 
 // Components
 import Routers from './router.jsx'
-import prueba from './static/js/jquery.prueba'
+import jqueryCustoms from './static/js/jquery.customs'
 import customDom from './static/js/custom-dom'
 
 (() => {
   customDom()
-  prueba()
+  jqueryCustoms()
 })()
 
 render(

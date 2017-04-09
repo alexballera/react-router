@@ -3,6 +3,7 @@
 import React from 'react'
 import './blog.scss'
 import {Helmet} from 'react-helmet'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Blog extends React.Component {
   render () {
@@ -14,7 +15,14 @@ class Blog extends React.Component {
             {'name': 'blog description', 'content': 'Blog Helmet application'}
           ]}
         />
-        <h1 className='blog-title'>Página Blog</h1>
+        <ReactCSSTransitionGroup
+          transitionName='animate'
+          transitionAppear
+          transitionAppearTimeout={1000}
+          transitionEnter={false}
+          transitionLeave={false} >
+          <h1 className='blog-title'>Página Blog</h1>
+        </ReactCSSTransitionGroup>
       </div>
     )
   }
