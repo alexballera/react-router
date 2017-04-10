@@ -2,17 +2,17 @@
 
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-window.jQuery = require('jquery')
-window.$ = require('jquery')
+import $ from 'jquery'
 import 'materialize-css'
 import './navigation.scss'
 
 class Navigation extends React.Component {
   componentDidMount () {
-    window.$(document).ready(function () {
-      // var linkHome = jQuery('#home')
-      var home = window.$('#home')
+    $(document).ready(function () {
+      const wraper = $('.nav-wrapper')
+      const home = wraper.find('#home')
       home.removeClass('active')
+      wraper.find('.brand-logo').removeClass('active')
       home.dropdown({
         hover: true,
         belowOrigin: true,
