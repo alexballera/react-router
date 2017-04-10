@@ -5,6 +5,7 @@ import React from 'react'
 import {Helmet} from 'react-helmet'
 import imagen from '../../static/images/disney-logo.jpg'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import Anime from 'react-anime'
 
 class About extends React.Component {
   render () {
@@ -22,8 +23,18 @@ class About extends React.Component {
           transitionAppearTimeout={1000}
           transitionEnter={false}
           transitionLeave={false} >
-          <h1 className='about-title'>Página Acerca</h1>
-          <img src={imagen} />
+          <div className='titulo'>
+            <Anime
+              opacity={[0, 1]}
+              translateY={'2rem'}
+              delay={(e, i) => i * 3000}
+              >
+              <div className='"titulo'>
+                <h1 className='about-title'>Página Acerca</h1>
+              </div>
+            </Anime>
+            <img src={imagen} />
+          </div>
         </ReactCSSTransitionGroup>
       </div>
     )

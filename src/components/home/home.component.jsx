@@ -4,7 +4,11 @@ import './home.scss'
 import imagen from '../../static/images/disney-logo.jpg'
 import {Helmet} from 'react-helmet'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import Anime from 'react-anime'
 import Componente1 from './components/component1.jsx'
+import Componente2 from './components/component2.jsx'
+import Componente3 from './components/component3.jsx'
+import Componente4 from './components/component4.jsx'
 
 class Home extends React.Component {
   render () {
@@ -26,12 +30,21 @@ class Home extends React.Component {
             transitionEnter={false}
             transitionLeave={false}>
             <div className='titulo cssgradients'>
-              <h1>Pagina Home</h1>
+              <Anime
+                opacity={[0, 1]}
+                // translateY={'2rem'}
+                delay={(e, i) => i * 3000}
+                >
+                <h1>Pagina Home</h1>
+              </Anime>
               <i className='fa fa-telegram' />
               <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
               <img src={imagen} />
             </div>
             <Componente1 />
+            <Componente2 />
+            <Componente3 />
+            <Componente4 />
           </ReactCSSTransitionGroup>
         </div>
       )

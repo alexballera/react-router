@@ -2,16 +2,9 @@
 @import '../../static/scss/variables';
 
 .titulo {
-  display: flex;
-  flex-flow: row wrap;
-
-  h1 {
-    color: $yellow;
-  }
-
   &.cssgradients {
-  background-image: linear-gradient(cornflowerblue, rebeccapurple);
-}
+    background-image: linear-gradient(cornflowerblue, rebeccapurple);
+  }
 }
 
 .sub-titulo {

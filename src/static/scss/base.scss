@@ -1,0 +1,26 @@
+@charset 'UTF-8';
+
+body {
+  font-family: Roboto;
+}
+
+body,
+h1 {
+  background-color: $cyan;
+  color: $magenta;
+}
+
+.active {
+  color: $cyan !important;
+}
+
+.titulo {
+  display: flex;
+  flex-flow: row wrap;
+
+  h1 {
+    color: $yellow;
+    position: relative;
+    // top: -2rem;
+  }
+}

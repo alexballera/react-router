@@ -14,7 +14,6 @@ class Routers extends React.Component {
       <Router>
         <div>
           <Navigation />
-          <hr />
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/topics' component={Topics} />

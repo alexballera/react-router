@@ -19,6 +19,7 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         title: 'Practica React Webpack',
         filename: './index.html',
+        template: './src/index.ejs',
         inject: true | 'head' | 'body'
       })
     ]
