@@ -2,24 +2,13 @@
 
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import $ from 'jquery'
+import Dropdown from './dropdown'
 import 'materialize-css'
 import './navigation.scss'
 
 class Navigation extends React.Component {
   componentDidMount () {
-    $(document).ready(function () {
-      const wraper = $('.nav-wrapper')
-      const home = wraper.find('#home')
-      home.removeClass('active')
-      wraper.find('.brand-logo').removeClass('active')
-      home.dropdown({
-        hover: true,
-        belowOrigin: true,
-        alignment: 'left',
-        constrainWidth: false
-      })
-    })
+    Dropdown()
   }
   render () {
     return (
