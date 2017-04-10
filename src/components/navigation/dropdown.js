@@ -4,13 +4,13 @@ import $ from 'jquery'
 export default () => {
   $(document).ready(() => {
     const wraper = $('.nav-wrapper')
-    const home = wraper.find('#home')
-    home.removeClass('active')
+    const dropdownButton = wraper.find('.dropdown-button')
+    dropdownButton.removeClass('active')
     wraper.find('.brand-logo').removeClass('active')
-    var dropdown = home.siblings('#dropdown1')
-    home.hover(() => {
-      dropdown.addClass('active')
-      dropdown.css({
+    var dropdownUl = dropdownButton.siblings('#dropdown1')
+    dropdownButton.hover(() => {
+      dropdownUl.addClass('active')
+      dropdownUl.css({
         display: 'block',
         width: '109px',
         position: 'absolute',
@@ -20,7 +20,8 @@ export default () => {
       })
     })
     $('body').click(() => {
-      dropdown.css('display', 'none')
+      dropdownUl.css('display', 'none')
+      dropdownUl.removeClass('active')
     })
   })
 }
