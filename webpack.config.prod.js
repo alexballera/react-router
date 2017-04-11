@@ -35,7 +35,7 @@ module.exports = (env) => {
         canPrint: false
       }),
       new HtmlWebpackPlugin({
-        title: 'Practica React Webpack',
+        title: 'React Webpack Materialize',
         filename: './index.html',
         template: './src/index.ejs',
         inject: true | 'head' | 'body',

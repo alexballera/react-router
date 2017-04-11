@@ -1,10 +1,12 @@
 'use strict'
 
 import React from 'react'
-import './blog.scss'
 import {Helmet} from 'react-helmet'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Anime from 'react-anime'
+
+// Estáticos
+import './blog.scss'
 
 class Blog extends React.Component {
   render () {

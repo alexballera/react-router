@@ -1,6 +1,8 @@
 'use strict'
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+
+// Componentes
 import About from './components/about/about.component.jsx'
 import Blog from './components/blog/blog.component.jsx'
 import Home from './components/home/home.component.jsx'

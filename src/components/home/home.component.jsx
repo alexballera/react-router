@@ -1,10 +1,14 @@
 'use strict'
 import React from 'react'
-import './home.scss'
-import imagen from '../../static/images/disney-logo.jpg'
 import {Helmet} from 'react-helmet'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Anime from 'react-anime'
+
+// Estáticos
+import './home.scss'
+import imagen from '../../static/images/disney-logo.jpg'
+
+// Componentes
 import Componente1 from './components/component1.jsx'
 import Componente2 from './components/component2.jsx'
 import Componente3 from './components/component3.jsx'
@@ -32,7 +36,7 @@ class Home extends React.Component {
             <div className='titulo cssgradients'>
               <Anime
                 opacity={[0, 1]}
-                // translateY={'2rem'}
+                translateY={'2rem'}
                 delay={(e, i) => i * 3000}
                 >
                 <h1>Pagina Home</h1>

@@ -2,8 +2,10 @@
 
 import React from 'react'
 import {Route, NavLink} from 'react-router-dom'
-import styles from './topic.style'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
+// Estáticos
+import styles from './topic.style'
 
 const Topics = ({ match }) => (
   <ReactCSSTransitionGroup
