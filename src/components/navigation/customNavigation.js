@@ -6,7 +6,7 @@ export default () => {
     const body = $('body')
     const wraper = body.find('.nav-wrapper')
     const dropdownButton = wraper.find('.dropdown-button')
-    const dropdownUl = dropdownButton.siblings('#dropdown1')
+    const dropdownContent = dropdownButton.siblings('#dropdown1')
 
     const buttonCollapse = wraper.find('.button-collapse')
     const sideNav = wraper.find('.side-nav')
@@ -14,17 +14,17 @@ export default () => {
     // Dropdown
     dropdownButton.removeClass('active')
     dropdownButton.hover(() => {
-      dropdownUl.addClass('active')
-      dropdownUl.css({
+      dropdownContent.addClass('active')
+      dropdownContent.css({
         position: 'absolute',
         top: '64px',
         opacity: 1,
         transition: 'all 1s ease'
       })
-      dropdownUl.css('display', 'block')
+      dropdownContent.css('display', 'block')
     })
-    dropdownUl.mouseleave(() => {
-      dropdownUl.css('display', 'none')
+    dropdownContent.mouseleave(() => {
+      dropdownContent.css('display', 'none')
     })
 
     // Side Nav
@@ -35,7 +35,7 @@ export default () => {
       })
     })
     body.click(() => {
-      dropdownUl.css('display', 'none')
+      dropdownContent.css('display', 'none')
       sideNav.css('left', 0)
     })
   })
