@@ -16,11 +16,15 @@ export default () => {
     dropdownButton.hover(() => {
       dropdownUl.addClass('active')
       dropdownUl.css({
-        display: 'block',
         position: 'absolute',
         top: '64px',
-        opacity: 1
+        opacity: 1,
+        transition: 'all 1s ease'
       })
+      dropdownUl.css('display', 'block')
+    })
+    dropdownUl.mouseleave(() => {
+      dropdownUl.css('display', 'none')
     })
 
     // Side Nav
