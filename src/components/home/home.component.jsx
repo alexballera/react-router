@@ -36,12 +36,11 @@ class Home extends React.Component {
             <div className='titulo cssgradients'>
               <Anime
                 opacity={[0, 1]}
-                translateY={'2rem'}
-                delay={(e, i) => i * 3000}
+                translateY={'1rem'}
+                delay={(e, i) => i * 1000}
                 >
                 <h1>Pagina Home</h1>
               </Anime>
-              <i className='fa fa-telegram' />
               <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
               <img src={imagen} />
             </div>

@@ -1,9 +1,17 @@
 @charset 'UTF-8';
 @import '../../static/scss/variables';
 
+$cornflowerblue: #6495ed;
+$rebeccapurple: #639;
+
 .titulo {
   &.cssgradients {
-    background-image: linear-gradient(cornflowerblue, rebeccapurple);
+    background-image: linear-gradient($cornflowerblue, $rebeccapurple);
+  }
+
+  h1 {
+    position: relative;
+    top: -1rem;
   }
 }
 

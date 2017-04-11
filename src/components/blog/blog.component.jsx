@@ -26,11 +26,15 @@ class Blog extends React.Component {
           transitionLeave={false} >
           <Anime
             opacity={[0, 1]}
-            translateY={'2rem'}
-            delay={(e, i) => i * 3000}
+            translateY={'1rem'}
+            delay={(e, i) => i * 1000}
             >
             <h1 className='blog-title titulo'>Página Blog</h1>
           </Anime>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Dolorem mollitia, quam pariatur vero quia tempore minus, nam,
+          esse quidem perferendis totam iste saepe soluta reprehenderit
+          consectetur iusto. Praesentium, dolore, minima?</p>
         </ReactCSSTransitionGroup>
       </div>
     )
