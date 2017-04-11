@@ -2,6 +2,7 @@
 
 import React from 'react'
 import {NavLink, Link} from 'react-router-dom'
+import '../../../node_modules/materialize-css/dist/js/materialize.js'
 
 // Estáticos
 import customNavigation from './customNavigation'

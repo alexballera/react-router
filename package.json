@@ -28,6 +28,7 @@
     "react-anime": "^0.3.4",
     "react-dom": "^15.4.2",
     "react-helmet": "^5.0.2",
+    "react-materialize": "^0.18.1",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
     "react-tap-event-plugin": "^2.0.1",

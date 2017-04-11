@@ -13,7 +13,16 @@ export default () => {
 
     // Dropdown
     dropdownButton.removeClass('active')
+
     dropdownButton.hover(() => {
+      Dropdown()
+    })
+
+    dropdownButton.click(() => {
+      Dropdown()
+    })
+
+    var Dropdown = () => {
       dropdownContent.addClass('active')
       dropdownContent.css({
         position: 'absolute',
@@ -22,18 +31,28 @@ export default () => {
         transition: 'all 1s ease'
       })
       dropdownContent.css('display', 'block')
-    })
+    }
+
     dropdownContent.mouseleave(() => {
       dropdownContent.css('display', 'none')
     })
 
     // Side Nav
     buttonCollapse.hover(() => {
+      sideNavbar()
+    })
+
+    buttonCollapse.click(() => {
+      sideNavbar()
+    })
+
+    var sideNavbar = () => {
       sideNav.css({
         left: '300px',
         transition: 'all 1s ease'
       })
-    })
+    }
+
     body.click(() => {
       dropdownContent.css('display', 'none')
       sideNav.css('left', 0)
