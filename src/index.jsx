@@ -1,5 +1,6 @@
 import React from 'react'
 import {render} from 'react-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 // Fuentes, estilos y optimizacion
 import './index.scss'
@@ -19,7 +20,13 @@ import customDom from './static/js/custom-dom'
 (() => {
   customDom()
 })()
+const App = () => (
+  <MuiThemeProvider>
+    <Routers />
+  </MuiThemeProvider>
+)
 
-const App = document.getElementById('app')
-
-render(<Routers />, App)
+render(
+  <App />,
+  document.getElementById('app')
+  )
