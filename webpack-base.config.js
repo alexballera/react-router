@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const APP_DIR = path.resolve(__dirname, 'src')
@@ -114,6 +115,11 @@ module.exports = () => {
       ]), */
       new CleanWebpackPlugin('public'),
       new ExtractTextPlugin('style.css'),
+      new HtmlWebpackPlugin({
+        title: 'Practica React Webpack',
+        filename: './index.html',
+        inject: true | 'head' | 'body'
+      }),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',

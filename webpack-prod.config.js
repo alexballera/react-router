@@ -48,10 +48,7 @@ module.exports = (env) => {
         canPrint: false
       }),
       new HtmlWebpackPlugin({
-        title: 'React Webpack Materialize',
-        filename: './index.html',
         template: './src/index.ejs',
-        inject: true | 'head' | 'body',
         minify: {
           collapseInlineTagWhitespace: true,
           collapseWhitespace: true,

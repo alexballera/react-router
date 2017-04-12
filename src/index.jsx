@@ -10,7 +10,6 @@ import './index.scss'
 // Materialize
 import '../node_modules/materialize-css/sass/materialize.scss'
 import '../node_modules/materialize-css/dist/js/materialize.js'
-// import 'materialize-css'
 
 import 'modernizr'
 
