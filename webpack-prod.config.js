@@ -5,6 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
 const base = require('./webpack-base.config')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = (env) => {
@@ -13,6 +14,7 @@ module.exports = (env) => {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
+      new CleanWebpackPlugin('public'),
       new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15}),
       new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000}),
       new webpack.optimize.AggressiveMergingPlugin(),

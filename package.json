@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
+    "deploy": "gh-pages -d public",
     "build": "webpack --env=prod -w -p --progress --profile --colors",
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env dev --open\""
   },
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/alexballera/react-router#readme",
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "gh-pages-webpack-plugin": "^1.0.1",
     "jquery": "^3.2.1",
     "material-ui": "^0.17.1",
     "materialize-css": "^0.98.1",
@@ -50,6 +52,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "favicons-webpack-plugin": "0.0.7",
     "file-loader": "^0.11.1",
+    "gh-pages": "^0.12.0",
     "html-webpack-plugin": "^2.28.0",
     "imagemin-webpack-plugin": "^1.4.4",
     "json-loader": "^0.5.4",

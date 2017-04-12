@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const CopyWebpackPlugin = require('copy-webpack-plugin')
 
@@ -16,7 +15,8 @@ module.exports = () => {
       path: BUILD_DIR,
       filename: 'bundle.js',
       sourceMapFilename: '[name].map',
-      chunkFilename: '[id].chunk.js'
+      chunkFilename: '[id].chunk.js',
+      publicPath: '/public/'
     },
 
     devtool: 'eval-source-map',
@@ -113,7 +113,6 @@ module.exports = () => {
         {from: 'src/www/index.html'},
         {from: 'src/www/versions.json'}
       ]), */
-      new CleanWebpackPlugin('public'),
       new ExtractTextPlugin('style.css'),
       new HtmlWebpackPlugin({
         title: 'Practica React Webpack',
