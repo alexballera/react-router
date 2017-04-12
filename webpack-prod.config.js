@@ -50,6 +50,9 @@ module.exports = (env) => {
         canPrint: false
       }),
       new HtmlWebpackPlugin({
+        title: 'Practica React Webpack',
+        filename: './index.html',
+        inject: true | 'head' | 'body',
         template: './src/index.ejs',
         minify: {
           collapseInlineTagWhitespace: true,
