@@ -1,6 +1,7 @@
 import React from 'react'
 import {render} from 'react-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
 // Fuentes, estilos y optimizacion
 import './index.scss'
@@ -19,6 +20,7 @@ import customDom from './static/js/custom-dom'
 
 (() => {
   customDom()
+  injectTapEventPlugin()
 })()
 const App = () => (
   <MuiThemeProvider>

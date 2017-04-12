@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const APP_DIR = path.resolve(__dirname, 'src')
 const BUILD_DIR = path.resolve(__dirname, 'public')
@@ -105,6 +106,12 @@ module.exports = () => {
       }
     },
     plugins: [
+     /* new CopyWebpackPlugin([
+        {from: 'src/www/css', to: 'css'},
+        {from: 'src/www/images', to: 'images'},
+        {from: 'src/www/index.html'},
+        {from: 'src/www/versions.json'}
+      ]), */
       new CleanWebpackPlugin('public'),
       new ExtractTextPlugin('style.css'),
       new webpack.ProvidePlugin({
