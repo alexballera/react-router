@@ -4,7 +4,7 @@ import './about.scss'
 import React from 'react'
 import {Helmet} from 'react-helmet'
 import imagen from '../../static/images/disney-logo.jpg'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import Anime from 'react-anime'
 
 class About extends React.Component {

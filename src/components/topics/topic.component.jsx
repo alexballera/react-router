@@ -2,7 +2,7 @@
 
 import React from 'react'
 import {Route, NavLink} from 'react-router-dom'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 // Estáticos
 import styles from './topic.style'

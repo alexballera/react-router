@@ -14,6 +14,7 @@ import '../node_modules/materialize-css/dist/js/materialize.js'
 import 'modernizr'
 
 // Components
+// import Routers from './router-ghpages.jsx'
 import Routers from './router.jsx'
 import customDom from './static/js/custom-dom'
 
