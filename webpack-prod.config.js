@@ -4,17 +4,30 @@ const cssnano = require('cssnano')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
-const base = require('./webpack.config.base')
+const base = require('./webpack-base.config')
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = (env) => {
   return merge(base(), {
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }),
       new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15}),
       new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000}),
       new webpack.optimize.AggressiveMergingPlugin(),
       new FaviconsWebpackPlugin({logo: './favicon.png', inject: true}),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production')
+      new ImageminWebpackPlugin({
+        test: 'images/**',
+        optipng: {
+          optimizationLevel: 9
+        },
+        pngquant: {
+          quality: '95-100'
+        },
+        jpegtran: {
+          progressive: false
+        }
       }),
       new webpack.optimize.UglifyJsPlugin({
         compress: {

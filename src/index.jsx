@@ -3,9 +3,9 @@ import {render} from 'react-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
-// Fuentes, estilos y optimizacion
+// Fuentes y estilos
 import './index.scss'
-import 'font-awesome/scss/font-awesome.scss'
+// import 'font-awesome/scss/font-awesome.scss'
 
 // Materialize
 import '../node_modules/materialize-css/sass/materialize.scss'
