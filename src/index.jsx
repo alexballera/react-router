@@ -2,26 +2,31 @@ import React from 'react'
 import {render} from 'react-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+import 'modernizr'
 
-// Fuentes y estilos
+/**
+ * Fuentes y estilos
+ * https://github.com/typekit/webfontloader
+ */
+
 import './index.scss'
-// import 'font-awesome/scss/font-awesome.scss'
+import WebFont from './static/js/WebFont'
 
 // Materialize
 import '../node_modules/materialize-css/sass/materialize.scss'
 import '../node_modules/materialize-css/dist/js/materialize.js'
 
-import 'modernizr'
-
 // Components
 // import Routers from './router-ghpages.jsx'
 import Routers from './router.jsx'
-import customDom from './static/js/custom-dom'
+import CustomDOM from './static/js/custom-dom'
 
 (() => {
-  customDom()
   injectTapEventPlugin()
+  CustomDOM()
+  WebFont()
 })()
+
 const App = () => (
   <MuiThemeProvider>
     <Routers />
