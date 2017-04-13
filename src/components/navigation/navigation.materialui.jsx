@@ -3,7 +3,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { DropDownMenu, IconMenu, Drawer, MenuItem, Menu, Paper, IconButton } from 'material-ui'
-import MapsPlace from 'material-ui/svg-icons/maps/place'
+import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 import './navigation.scss'
 
 const style = {
@@ -49,7 +49,7 @@ class Navigation extends React.Component {
             width={'100%'}
           >
             <IconMenu
-              iconButtonElement={<IconButton><MapsPlace /></IconButton>}
+              iconButtonElement={<IconButton><MenuIcon /></IconButton>}
               onTouchTap={this.handleToggle}
             />
             <Drawer
