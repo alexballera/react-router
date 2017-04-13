@@ -83,3 +83,23 @@ Usamos en el archivo .jsx:
 
 ## Awesome React Component
 [https://github.com/brillout/awesome-react-components](https://github.com/brillout/awesome-react-components)
+
+## Configurando handleEvent
+
+Cambiar
+
+    handleChange = (event, index, value) => this.setState({value})
+
+por
+
+    handleChange (event, index, value) {
+      this.setState({value})
+    }
+
+Bindearlo en el Contructor
+
+    constructor (props) {
+      super(props)
+      this.state = {value: 1}
+      this.handleChange = this.handleChange.bind(this)
+    }

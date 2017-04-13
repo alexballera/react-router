@@ -2,27 +2,17 @@
 import React from 'react'
 import { DropDownMenu, MenuItem } from 'material-ui'
 import { NavLink } from 'react-router-dom'
-import $ from 'jquery'
+import customNavigation from './customNavigation'
 
 class Dropdown extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {value: 2}
+    this.state = {value: 1}
+    this.handleChange = this.handleChange.bind(this)
   }
+
   componentDidMount () {
-    var DropDownFirst = $('.DropDown:first')
-    var DropDownSecond = $('.DropDown').eq(1)
-    DropDownFirst.css({
-      height: '64px'
-    })
-    DropDownFirst.find('div:first div').css({
-      color: 'white',
-      textTransform: 'uppercase',
-      lineHeight: '64px'
-    })
-    DropDownSecond.css({
-      width: '100%'
-    })
+    customNavigation()
   }
 
   handleChange (event, index, value) {
