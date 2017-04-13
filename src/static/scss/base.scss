@@ -24,3 +24,7 @@ h1 {
     // top: -2rem;
   }
 }
+div[data-reactroot] {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}

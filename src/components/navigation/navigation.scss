@@ -1,3 +1,25 @@
 .dropdown-content.active {
   top: 64px !important;
 }
+
+.contenedor {
+  > div {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  div[role='presentation'] {
+    width: 100% !important;
+  }
+
+  div[role='menu'] {
+    display: flex !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  a[role='menuitem'] {
+    width: 100% !important;
+  }
+}
