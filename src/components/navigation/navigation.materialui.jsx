@@ -6,11 +6,8 @@ import {
   Link
 } from 'react-router-dom'
 import {
-  DropDownMenu,
-  IconMenu,
   Drawer,
   MenuItem,
-  Menu,
   Paper,
   IconButton,
   FlatButton,
@@ -20,6 +17,7 @@ import { Row } from 'react-materialize'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 import './navigation.scss'
 import imagen from '../../static/images/disney-logo.jpg'
+import Dropdown from './dropdown.component.jsx'
 
 const style = {
   menuItem: {
@@ -30,8 +28,10 @@ const style = {
   customWidth: {
     width: 200
   },
-  title: {
-    cursor: 'pointer'
+  ButtonStyle: {
+    color: '#fff',
+    height: '64px',
+    lineHeight: '64px'
   }
 }
 
@@ -67,53 +67,29 @@ class Navigation extends React.Component {
             className='navbar-container'
             onLeftIconButtonTouchTap={this.handleToggle}
             iconElementLeft={<IconButton><MenuIcon /></IconButton>}
+            style={{height: '64px'}}
             iconElementRight={
               <div className='navbar-desktop'>
-                <FlatButton label='Home' containerElement={<Link to='/' />} />
-                <FlatButton label='Topics' containerElement={<Link to='/topics' />} />
-                <FlatButton label='About' containerElement={<Link to='/about' />} />
-                <FlatButton label='Blog' containerElement={<Link to='/blog' />} />
+                <Dropdown />
+                <FlatButton label='Home' style={style.ButtonStyle} containerElement={<Link to='/' />} />
+                <FlatButton label='Topics' style={style.ButtonStyle} containerElement={<NavLink to='/topics' />} />
+                <FlatButton label='About' style={style.ButtonStyle} containerElement={<NavLink to='/about' />} />
+                <FlatButton label='Blog' style={style.ButtonStyle} containerElement={<NavLink to='/blog' />} />
               </div>
             }
           />
-          <Menu
-            desktop
-            width={'100%'}
-            leftIcon
+          <Drawer
+            docked={false}
+            width={200}
+            open={this.state.open}
+            onRequestChange={(open) => this.setState({open})}
           >
-            <IconMenu
-              iconButtonElement={<IconButton><MenuIcon /></IconButton>}
-              onTouchTap={this.handleToggle}
-            />
-            <Drawer
-              docked={false}
-              width={200}
-              open={this.state.open}
-              onRequestChange={(open) => this.setState({open})}
-            >
-              <MenuItem onTouchTap={this.handleClose} primaryText='Home' style={style.menuItem} containerElement={<NavLink to='/' />} />
-              <MenuItem onTouchTap={this.handleClose} primaryText='Topics' style={style.menuItem} containerElement={<NavLink to='/topics' />} />
-              <MenuItem onTouchTap={this.handleClose} primaryText='About' style={style.menuItem} containerElement={<NavLink to='/about' />} />
-              <MenuItem onTouchTap={this.handleClose} primaryText='Blog' style={style.menuItem} containerElement={<NavLink to='/blog' />} />
-            </Drawer>
-            <MenuItem primaryText='Home' style={style.menuItem} containerElement={<NavLink to='/' />} />
-            <MenuItem primaryText='Topics' style={style.menuItem} containerElement={<NavLink to='/topics' />} />
-            <MenuItem primaryText='About' style={style.menuItem} containerElement={<NavLink to='/about' />} />
-            <MenuItem primaryText='Blog' style={style.menuItem} containerElement={<NavLink to='/blog' />} />
-            <DropDownMenu
-              className='DropDown waves-effect'
-              value={this.state.value}
-              onChange={this.handleChange}
-              autoWidth={false}
-              labelStyle={style.menuItem}
-              >
-              <MenuItem value={1} primaryText='Never' className='DropDownItem' />
-              <MenuItem value={2} primaryText='Every Night' className='DropDownItem' />
-              <MenuItem value={3} primaryText='Weeknights' />
-              <MenuItem value={4} primaryText='Weekends' />
-              <MenuItem value={5} primaryText='Weekly' />
-            </DropDownMenu>
-          </Menu>
+            <Dropdown />
+            <MenuItem onTouchTap={this.handleClose} primaryText='Home' style={style.menuItem} containerElement={<NavLink to='/' />} />
+            <MenuItem onTouchTap={this.handleClose} primaryText='Topics' style={style.menuItem} containerElement={<NavLink to='/topics' />} />
+            <MenuItem onTouchTap={this.handleClose} primaryText='About' style={style.menuItem} containerElement={<NavLink to='/about' />} />
+            <MenuItem onTouchTap={this.handleClose} primaryText='Blog' style={style.menuItem} containerElement={<NavLink to='/blog' />} />
+          </Drawer>
         </Row>
       </Paper>
     )
