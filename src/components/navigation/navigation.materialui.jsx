@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { IconMenu, Drawer, MenuItem, Menu, Paper, IconButton } from 'material-ui'
+import { DropDownMenu, IconMenu, Drawer, MenuItem, Menu, Paper, IconButton } from 'material-ui'
 import MapsPlace from 'material-ui/svg-icons/maps/place'
 import './navigation.scss'
 
@@ -11,13 +11,19 @@ const style = {
     display: 'inline-block',
     height: '48px',
     lineHeight: '48px'
+  },
+  customWidth: {
+    width: 200
   }
 }
 
 class Navigation extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {open: false}
+    this.state = {
+      open: false,
+      value: 1
+    }
     this.handleToggle = this.handleToggle.bind(this)
     this.handleClose = this.handleClose.bind(this)
   }
@@ -28,6 +34,10 @@ class Navigation extends React.Component {
 
   handleClose () {
     this.setState({open: false})
+  }
+
+  handleChange (event, index, value) {
+    this.setState({value})
   }
 
   render () {
@@ -57,6 +67,19 @@ class Navigation extends React.Component {
             <MenuItem primaryText='Topics' style={style.menuItem} containerElement={<NavLink to='/topics' />} />
             <MenuItem primaryText='About' style={style.menuItem} containerElement={<NavLink to='/about' />} />
             <MenuItem primaryText='Blog' style={style.menuItem} containerElement={<NavLink to='/blog' />} />
+            <DropDownMenu
+              className='DropDown waves-effect'
+              value={this.state.value}
+              onChange={this.handleChange}
+              autoWidth={false}
+              labelStyle={style.menuItem}
+              >
+              <MenuItem value={1} primaryText='Never' className='DropDownItem' />
+              <MenuItem value={2} primaryText='Every Night' className='DropDownItem' />
+              <MenuItem value={3} primaryText='Weeknights' />
+              <MenuItem value={4} primaryText='Weekends' />
+              <MenuItem value={5} primaryText='Weekly' />
+            </DropDownMenu>
           </Menu>
         </div>
       </Paper>
