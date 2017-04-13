@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Route, Switch, browserHistory} from 'react-rout
 import About from './components/about/about.component.jsx'
 import Blog from './components/blog/blog.component.jsx'
 import Home from './components/home/home.component.jsx'
-import Navigation from './components/navigation/navigation.materialui.jsx'
+import Navigation from './components/navigation/navigation.component.jsx'
 import Topics from './components/topics/topic.component.jsx'
 import NotFound from './components/NotFound/NotFound.component.jsx'
 
