@@ -1,10 +1,25 @@
 'use strict'
 
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { DropDownMenu, IconMenu, Drawer, MenuItem, Menu, Paper, IconButton } from 'material-ui'
+import {
+  NavLink,
+  Link
+} from 'react-router-dom'
+import {
+  DropDownMenu,
+  IconMenu,
+  Drawer,
+  MenuItem,
+  Menu,
+  Paper,
+  IconButton,
+  FlatButton,
+  AppBar
+} from 'material-ui'
+import { Row } from 'react-materialize'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 import './navigation.scss'
+import imagen from '../../static/images/disney-logo.jpg'
 
 const style = {
   menuItem: {
@@ -14,6 +29,9 @@ const style = {
   },
   customWidth: {
     width: 200
+  },
+  title: {
+    cursor: 'pointer'
   }
 }
 
@@ -43,10 +61,25 @@ class Navigation extends React.Component {
   render () {
     return (
       <Paper>
-        <div className='contenedor'>
+        <Row className='contenedor'>
+          <AppBar
+            title={<img src={imagen} />}
+            className='navbar-container'
+            onLeftIconButtonTouchTap={this.handleToggle}
+            iconElementLeft={<IconButton><MenuIcon /></IconButton>}
+            iconElementRight={
+              <div className='navbar-desktop'>
+                <FlatButton label='Home' containerElement={<Link to='/' />} />
+                <FlatButton label='Topics' containerElement={<Link to='/topics' />} />
+                <FlatButton label='About' containerElement={<Link to='/about' />} />
+                <FlatButton label='Blog' containerElement={<Link to='/blog' />} />
+              </div>
+            }
+          />
           <Menu
             desktop
             width={'100%'}
+            leftIcon
           >
             <IconMenu
               iconButtonElement={<IconButton><MenuIcon /></IconButton>}
@@ -81,7 +114,7 @@ class Navigation extends React.Component {
               <MenuItem value={5} primaryText='Weekly' />
             </DropDownMenu>
           </Menu>
-        </div>
+        </Row>
       </Paper>
     )
   }
