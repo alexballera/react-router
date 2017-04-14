@@ -15,10 +15,9 @@ import {
 } from 'material-ui'
 import { Row } from 'react-materialize'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
-import './navigation.scss'
+// import './navigation.scss'
 import imagen from '../../static/images/disney-logo.jpg'
 import Dropdown from './dropdown.component.jsx'
-
 const style = {
   menuItem: {
     display: 'inline-block',
@@ -39,8 +38,7 @@ class Navigation extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      open: false,
-      value: 1
+      open: false
     }
     this.handleToggle = this.handleToggle.bind(this)
     this.handleClose = this.handleClose.bind(this)
@@ -52,10 +50,6 @@ class Navigation extends React.Component {
 
   handleClose () {
     this.setState({open: false})
-  }
-
-  handleChange (event, index, value) {
-    this.setState({value})
   }
 
   render () {

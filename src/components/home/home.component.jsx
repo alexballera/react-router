@@ -42,7 +42,7 @@ class Home extends React.Component {
                 <h1>Pagina Home</h1>
               </Anime>
               <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
-              <img src={imagen} />
+              <img className='imagenHome' src={imagen} />
             </div>
             <Componente1 />
             <Componente2 />
