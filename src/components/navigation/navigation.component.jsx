@@ -9,10 +9,15 @@ import {
   IconButton,
   MenuItem
 } from 'material-ui'
+import Scroll from 'react-scroll'
 import ArrowDropDown from 'material-ui/svg-icons/navigation/arrow-drop-down'
+import ArrowForward from 'material-ui/svg-icons/navigation/chevron-right'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 import Logo from '../../static/images/disney-logo.jpg'
 import './navigation.scss'
+
+const ScrollLink = Scroll.Link
+const scrollSpy = Scroll.scrollSpy
 
 const styles = {
   menu: {
@@ -25,14 +30,51 @@ const styles = {
   }
 }
 
+const DropDown = [
+  <MenuItem
+    primaryText='Sección 1'
+    style={styles.menuItem}
+    containerElement={
+      <ScrollLink activeClass='active' to='section1' spy smooth duration={500} />
+      }
+    />,
+  <MenuItem
+    primaryText='Sección 2'
+    style={styles.menuItem}
+    containerElement={
+      <ScrollLink activeClass='active' to='section2' spy smooth duration={500} />
+      }
+    />,
+  <MenuItem
+    primaryText='Sección 3'
+    style={styles.menuItem}
+    containerElement={
+      <ScrollLink activeClass='active' to='section3' spy smooth duration={500} />
+      }
+    />,
+  <MenuItem
+    primaryText='Sección 4'
+    style={styles.menuItem}
+    containerElement={
+      <ScrollLink activeClass='active' to='section4' spy smooth duration={500} />
+      }
+    />
+]
+
 class Navigation extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
+      value: 1
     }
     this.handleToggle = this.handleToggle.bind(this)
     this.handleClose = this.handleClose.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  componentDidMount () {
+    scrollSpy.update()
   }
 
   handleToggle () {
@@ -43,12 +85,24 @@ class Navigation extends React.Component {
     this.setState({open: false})
   }
 
+  handleChange (event, index, value) {
+    this.setState({value: 2})
+    console.log(this.state.value)
+  }
+
+  displayHome (event, index, value) {
+    this.setState({value: 1})
+    console.log(this.state.value)
+  }
+
   render () {
     return (
       <nav className='navbar'>
         <Menu
           className='navbar-menu'
           style={styles.menu}
+          desktop
+          onChange={this.handleChange}
           >
           <MenuItem
             primaryText={<IconButton><MenuIcon /></IconButton>}
@@ -63,15 +117,38 @@ class Navigation extends React.Component {
             containerElement={<NavLink to='/' />}
             />
           <div className='navbar-desktop hide-on-med-and-down' >
-            <MenuItem primaryText='Home' style={styles.menuItem} anchorOrigin={{horizontal: 'left', vertical: 'bottom'}} rightIcon={<IconButton><ArrowDropDown /></IconButton>} menuItems={[
-              <MenuItem primaryText='Home' style={styles.menuItem} containerElement={<Link to='/' />} />,
-              <MenuItem primaryText='Topics' style={styles.menuItem} containerElement={<NavLink to='/topics' />} />,
-              <MenuItem primaryText='About' style={styles.menuItem} containerElement={<NavLink to='/about' />} />,
-              <MenuItem primaryText='Blog' style={styles.menuItem} containerElement={<NavLink to='/blog' />} />
-            ]} />
-            <MenuItem primaryText='Topics' style={styles.menuItem} containerElement={<NavLink to='/topics' />} />
-            <MenuItem primaryText='About' style={styles.menuItem} containerElement={<NavLink to='/about' />} />
-            <MenuItem primaryText='Blog' style={styles.menuItem} containerElement={<NavLink to='/blog' />} />
+            { this.state.value === 1 ? (
+              <MenuItem
+                primaryText='Home'
+                style={styles.menuItem}
+                anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                rightIcon={<IconButton><ArrowDropDown /></IconButton>}
+                menuItems={DropDown}
+                />
+            ) : (
+              <MenuItem
+                primaryText='Home'
+                style={styles.menuItem}
+                containerElement={<Link to='/' />}
+                onClick={this.displayHome}
+                />
+            )}
+            <MenuItem
+              primaryText='Topics'
+              onClick={this.handleChange}
+              style={styles.menuItem}
+              containerElement={<NavLink to='/topics' />}
+              />
+            <MenuItem
+              primaryText='About'
+              onClick={this.handleChange}
+              style={styles.menuItem}
+              containerElement={<NavLink to='/about' />} />
+            <MenuItem
+              primaryText='Blog'
+              onClick={this.handleChange}
+              style={styles.menuItem}
+              containerElement={<NavLink to='/blog' />} />
           </div>
         </Menu>
         <Drawer
@@ -79,14 +156,83 @@ class Navigation extends React.Component {
           width={200}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
+          onChange={this.handleChange}
         >
-          <MenuItem onTouchTap={this.handleClose} primaryText='Home' style={styles.menuItem} containerElement={<Link to='/' />} />
+          { this.state.value < 2 ? (
+            <MenuItem
+              primaryText='Home'
+              style={styles.menuItem}
+              rightIcon={<IconButton><ArrowForward /></IconButton>}
+              menuItems={
+              [
+                <MenuItem
+                  onTouchTap={this.handleClose}
+                  primaryText='Sección 1'
+                  style={styles.menuItem}
+                  containerElement={
+                    <ScrollLink activeClass='active'to='section1' spy smooth duration={500} />
+                    }
+                  />,
+                <MenuItem
+                  onTouchTap={this.handleClose}
+                  primaryText='Sección 2'
+                  style={styles.menuItem}
+                  containerElement={
+                    <ScrollLink activeClass='active' to='section2' spy smooth duration={500} />
+                    }
+                  />,
+                <MenuItem
+                  onTouchTap={this.handleClose}
+                  primaryText='Sección 3'
+                  style={styles.menuItem}
+                  containerElement={
+                    <ScrollLink activeClass='active' to='section3' spy smooth duration={500} />
+                    }
+                  />,
+                <MenuItem
+                  onTouchTap={this.handleClose}
+                  primaryText='Sección 4'
+                  style={styles.menuItem}
+                  containerElement={
+                    <ScrollLink activeClass='active' to='section4' spy smooth duration={500} />
+                    }
+                  />
+              ]
+              }
+              />
+            ) : (
+              <MenuItem
+                onTouchTap={this.handleClose}
+                primaryText='Home'
+                style={styles.menuItem}
+                containerElement={<Link to='/' />}
+                onClick={this.displayHome}
+                />
+            )}
           <Divider />
-          <MenuItem onTouchTap={this.handleClose} primaryText='Topics' style={styles.menuItem} containerElement={<NavLink to='/topics' />} />
+          <MenuItem
+            onTouchTap={this.handleClose}
+            onClick={this.handleChange}
+            primaryText='Topics'
+            style={styles.menuItem}
+            containerElement={<NavLink to='/topics' />}
+            />
           <Divider />
-          <MenuItem onTouchTap={this.handleClose} primaryText='About' style={styles.menuItem} containerElement={<NavLink to='/about' />} />
+          <MenuItem
+            onTouchTap={this.handleClose}
+            onClick={this.handleChange}
+            primaryText='About'
+            style={styles.menuItem}
+            containerElement={<NavLink to='/about' />}
+            />
           <Divider />
-          <MenuItem onTouchTap={this.handleClose} primaryText='Blog' style={styles.menuItem} containerElement={<NavLink to='/blog' />} />
+          <MenuItem
+            onTouchTap={this.handleClose}
+            onClick={this.handleChange}
+            primaryText='Blog'
+            style={styles.menuItem}
+            containerElement={<NavLink to='/blog' />}
+            />
           <Divider />
         </Drawer>
       </nav>

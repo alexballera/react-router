@@ -4,15 +4,11 @@ import {Helmet} from 'react-helmet'
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import Anime from 'react-anime'
 
+import Section from './components/scroll.component.jsx'
+
 // Estáticos
 import './home.scss'
 import imagen from '../../static/images/disney-logo.jpg'
-
-// Componentes
-import Componente1 from './components/component1.jsx'
-import Componente2 from './components/component2.jsx'
-import Componente3 from './components/component3.jsx'
-import Componente4 from './components/component4.jsx'
 
 class Home extends React.Component {
   render () {
@@ -27,28 +23,27 @@ class Home extends React.Component {
                 {'name': 'home description', 'content': 'Home Helmet application'}
             ]}
             />
-          <ReactCSSTransitionGroup
-            transitionName='animate'
-            transitionAppear
-            transitionAppearTimeout={1000}
-            transitionEnter={false}
-            transitionLeave={false}>
-            <div className='titulo cssgradients'>
-              <Anime
-                opacity={[0, 1]}
-                translateY={'1rem'}
-                delay={(e, i) => i * 1000}
-                >
-                <h1>Pagina Home</h1>
-              </Anime>
-              <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
-              <img className='imagenHome' src={imagen} />
-            </div>
-            <Componente1 />
-            <Componente2 />
-            <Componente3 />
-            <Componente4 />
-          </ReactCSSTransitionGroup>
+          <main className='home'>
+            <ReactCSSTransitionGroup
+              transitionName='animate'
+              transitionAppear
+              transitionAppearTimeout={1000}
+              transitionEnter={false}
+              transitionLeave={false}>
+              <div className='titulo cssgradients'>
+                <Anime
+                  opacity={[0, 1]}
+                  translateY={'1rem'}
+                  delay={(e, i) => i * 1000}
+                  >
+                  <h1>Pagina Home</h1>
+                </Anime>
+                <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
+                <img className='imagenHome' src={imagen} />
+              </div>
+              <Section />
+            </ReactCSSTransitionGroup>
+          </main>
         </div>
       )
     }

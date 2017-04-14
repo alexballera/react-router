@@ -1,36 +1,22 @@
 'use strict'
 import React from 'react'
-import { DropDownMenu, MenuItem } from 'material-ui'
-import { NavLink } from 'react-router-dom'
-import customNavigation from './customNavigation'
+import Scroll from 'react-scroll'
+import { MenuItem } from 'material-ui'
+import {styles} from './navigation.component.jsx'
 
-class Dropdown extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {value: 1}
-    this.handleChange = this.handleChange.bind(this)
-  }
+const ScrollLink = Scroll.Link
 
-  componentDidMount () {
-    customNavigation()
-  }
-
-  handleChange (event, index, value) {
-    this.setState({value})
-  }
+class DropDown extends React.Component {
   render () {
     return (
-      <DropDownMenu
-        className='DropDown'
-        value={this.state.value}
-        onChange={this.handleChange}
-      >
-        <MenuItem value={1} label='Home' primaryText='Home' className='DropDownItem' containerElement={<NavLink to='/' />} />
-        <MenuItem value={2} label='Topics' primaryText='Topics' className='DropDownItem' containerElement={<NavLink to='/topics' />} />
-        <MenuItem value={3} label='About' primaryText='About' className='DropDownItem' containerElement={<NavLink to='/about' />} />
-        <MenuItem value={4} label='Blog' primaryText='Blog' className='DropDownItem' containerElement={<NavLink to='/blog' />} />
-      </DropDownMenu>
+    [
+      <MenuItem primaryText='Sección 1' style={styles.menuItem} containerElement={<ScrollLink activeClass='active' to='section1' spy smooth duration={500} />} />,
+      <MenuItem primaryText='Sección 2' style={styles.menuItem} containerElement={<ScrollLink activeClass='active' to='section2' spy smooth duration={500} />} />,
+      <MenuItem primaryText='Sección 3' style={styles.menuItem} containerElement={<ScrollLink activeClass='active' to='section3' spy smooth duration={500} />} />,
+      <MenuItem primaryText='Sección 4' style={styles.menuItem} containerElement={<ScrollLink activeClass='active' to='section4' spy smooth duration={500} />} />
+    ]
     )
   }
 }
-module.exports = Dropdown
+console.log(DropDown)
+module.exports = DropDown

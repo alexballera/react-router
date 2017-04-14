@@ -4,8 +4,8 @@ import React from 'react'
 class Componente1 extends React.Component {
   render () {
     return (
-      <div>
-        <h2>Este es el Componente 3</h2>
+      <div className='home-section'>
+        <h2>Sección 4</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Soluta animi fugit minima, enim sunt totam. Ex, dolorum maxime
         minima omnis sequi dolores vel at reiciendis ut harum a fuga,

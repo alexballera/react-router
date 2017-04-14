@@ -4,22 +4,27 @@
 $cornflowerblue: #6495ed;
 $rebeccapurple: #639;
 
-.titulo {
-  &.cssgradients {
-    background-image: linear-gradient($cornflowerblue, $rebeccapurple);
+.home {
+  .titulo {
+    &.cssgradients {
+      background-image: linear-gradient($cornflowerblue, $rebeccapurple);
+    }
+
+    h1 {
+      position: relative;
+      top: -1rem;
+    }
   }
 
-  h1 {
-    position: relative;
-    top: -1rem;
+  .sub-titulo {
+    color: $orange;
   }
-}
+  .imagenHome {
+    height: 100px;
+  }
 
-.sub-titulo {
-  color: $orange;
-}
-.imagenHome {
-  height: 100px;
-  // width: 30%;
+  &-section {
+    padding-top: $heigth-navbar;
+  }
 }
 
