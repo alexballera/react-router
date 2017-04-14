@@ -33,7 +33,7 @@ class About extends React.Component {
                 <h1 className='about-title'>Página Acerca</h1>
               </div>
             </Anime>
-            <img src={imagen} />
+            <img className='about-images' src={imagen} />
           </div>
         </ReactCSSTransitionGroup>
       </div>

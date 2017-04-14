@@ -1,7 +1,7 @@
 'use strict'
 
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import {
   Menu,
   Divider,
@@ -12,10 +12,11 @@ import {
 import ArrowDropDown from 'material-ui/svg-icons/navigation/arrow-drop-down'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 import Logo from '../../static/images/disney-logo.jpg'
-import './menu.scss'
+import './navigation.scss'
 
 const styles = {
   menu: {
+    position: 'fixed',
     padding: 0
   },
   menuItem: {
@@ -44,7 +45,7 @@ class Navigation extends React.Component {
 
   render () {
     return (
-      <nav>
+      <nav className='navbar'>
         <Menu
           className='navbar-menu'
           style={styles.menu}
@@ -62,8 +63,8 @@ class Navigation extends React.Component {
             containerElement={<NavLink to='/' />}
             />
           <div className='navbar-desktop hide-on-med-and-down' >
-            <MenuItem primaryText='Home' style={styles.menuItem} anchorOrigin={{horizontal: 'right', vertical: 'bottom'}} rightIcon={<IconButton><ArrowDropDown /></IconButton>} menuItems={[
-              <MenuItem primaryText='Home' style={styles.menuItem} containerElement={<NavLink to='/' />} />,
+            <MenuItem primaryText='Home' style={styles.menuItem} anchorOrigin={{horizontal: 'left', vertical: 'bottom'}} rightIcon={<IconButton><ArrowDropDown /></IconButton>} menuItems={[
+              <MenuItem primaryText='Home' style={styles.menuItem} containerElement={<Link to='/' />} />,
               <MenuItem primaryText='Topics' style={styles.menuItem} containerElement={<NavLink to='/topics' />} />,
               <MenuItem primaryText='About' style={styles.menuItem} containerElement={<NavLink to='/about' />} />,
               <MenuItem primaryText='Blog' style={styles.menuItem} containerElement={<NavLink to='/blog' />} />
@@ -79,13 +80,14 @@ class Navigation extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem onTouchTap={this.handleClose} primaryText='Home' style={styles.menuItem} containerElement={<NavLink to='/' />} />
+          <MenuItem onTouchTap={this.handleClose} primaryText='Home' style={styles.menuItem} containerElement={<Link to='/' />} />
           <Divider />
           <MenuItem onTouchTap={this.handleClose} primaryText='Topics' style={styles.menuItem} containerElement={<NavLink to='/topics' />} />
           <Divider />
           <MenuItem onTouchTap={this.handleClose} primaryText='About' style={styles.menuItem} containerElement={<NavLink to='/about' />} />
           <Divider />
           <MenuItem onTouchTap={this.handleClose} primaryText='Blog' style={styles.menuItem} containerElement={<NavLink to='/blog' />} />
+          <Divider />
         </Drawer>
       </nav>
     )

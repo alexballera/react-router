@@ -10,6 +10,10 @@ h1 {
   color: $magenta;
 }
 
+.container {
+  padding-top: $heigth-navbar;
+}
+
 .active {
   color: $cyan !important;
 }
