@@ -7,6 +7,7 @@ const merge = require('webpack-merge')
 const base = require('./webpack-base.config')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = (env) => {
   return merge(base(), {
@@ -60,7 +61,10 @@ module.exports = (env) => {
           removeComments: true,
           removeScriptTypeAttributes: true
         }
-      })
+      }),
+      new CopyWebpackPlugin([
+        {from: 'src/sendMail.php'}
+      ])
     ]
   })
 }
