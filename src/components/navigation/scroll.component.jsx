@@ -4,10 +4,10 @@ import React from 'react'
 import Scroll from 'react-scroll'
 
 // Secciones
-import Seccion1 from '../sections/section1.jsx'
-import Seccion2 from '../sections/section2.jsx'
-import Seccion3 from '../sections/section3.jsx'
-import Seccion4 from '../sections/section4.jsx'
+import Seccion1 from '../home/sections/section1.jsx'
+import Seccion2 from '../home/sections/section2.jsx'
+import Seccion3 from '../home/sections/section3.jsx'
+import Seccion4 from '../home/sections/section4.jsx'
 
 const Element = Scroll.Element
 const scroll = Scroll.animateScroll

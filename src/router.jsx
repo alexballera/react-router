@@ -1,13 +1,23 @@
 'use strict'
 import React from 'react'
-import {BrowserRouter as Router, Route, Switch, browserHistory} from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  browserHistory
+} from 'react-router-dom'
 
 // Componentes
-import About from './components/about/about.component.jsx'
-import Blog from './components/blog/blog.component.jsx'
-import Home from './components/home/home.component.jsx'
 import Navigation from './components/navigation/navigation.component.jsx'
+
+// Data
+import data from './data/navigation.data'
+
+// Vistas
+import Home from './components/home/home.component.jsx'
 import Topics from './components/topics/topic.component.jsx'
+import About from './components/about/about.component.jsx'
+import Contactame from './components/blog/blog.component.jsx'
 import NotFound from './components/NotFound/NotFound.component.jsx'
 
 class Routers extends React.Component {
@@ -17,10 +27,10 @@ class Routers extends React.Component {
         <div>
           <Navigation />
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/topics' component={Topics} />
-            <Route path='/blog' component={Blog} />
-            <Route path='/about' component={About} />
+            <Route path={data.menu.item1.url} component={Home} exact />
+            <Route path={data.menu.item2.url} component={Topics} />
+            <Route path={data.menu.item3.url} component={About} />
+            <Route path={data.menu.item4.url} component={Contactame} />
             <Route component={NotFound} />
           </Switch>
         </div>
