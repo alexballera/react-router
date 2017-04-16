@@ -2,6 +2,9 @@
 
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
+
+import Scroll from 'react-scroll'
+
 import {
   Menu,
   Divider,
@@ -9,57 +12,17 @@ import {
   IconButton,
   MenuItem
 } from 'material-ui'
-import Scroll from 'react-scroll'
 import ArrowDropDown from 'material-ui/svg-icons/navigation/arrow-drop-down'
 import ArrowForward from 'material-ui/svg-icons/navigation/chevron-right'
 import MenuIcon from 'material-ui/svg-icons/navigation/menu'
+
 import Logo from '../../static/images/disney-logo.jpg'
-import './navigation.scss'
+import './styles.scss'
+import styles from './styles.jsx'
+import DropDownMenu from './DropDown.jsx'
 
 const ScrollLink = Scroll.Link
 const scrollSpy = Scroll.scrollSpy
-
-const styles = {
-  menu: {
-    position: 'fixed',
-    padding: 0
-  },
-  menuItem: {
-    height: '64px',
-    lineHeight: '64px'
-  }
-}
-
-const DropDown = [
-  <MenuItem
-    primaryText='Sección 1'
-    style={styles.menuItem}
-    containerElement={
-      <ScrollLink activeClass='active' to='section1' spy smooth duration={500} />
-      }
-    />,
-  <MenuItem
-    primaryText='Sección 2'
-    style={styles.menuItem}
-    containerElement={
-      <ScrollLink activeClass='active' to='section2' spy smooth duration={500} />
-      }
-    />,
-  <MenuItem
-    primaryText='Sección 3'
-    style={styles.menuItem}
-    containerElement={
-      <ScrollLink activeClass='active' to='section3' spy smooth duration={500} />
-      }
-    />,
-  <MenuItem
-    primaryText='Sección 4'
-    style={styles.menuItem}
-    containerElement={
-      <ScrollLink activeClass='active' to='section4' spy smooth duration={500} />
-      }
-    />
-]
 
 class Navigation extends React.Component {
   constructor (props) {
@@ -73,9 +36,13 @@ class Navigation extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.displayHome = this.displayHome.bind(this)
   }
+  componentWillMount () {
+    console.log('Se ejecuta antes de inyectar el DOM, estoy en navigation.component')
+  }
 
   componentDidMount () {
     scrollSpy.update()
+    console.log('Se ejecuta luego de inyectar el DOM, ideal para AJAX y agregar JQuery')
   }
 
   handleToggle () {
@@ -122,7 +89,7 @@ class Navigation extends React.Component {
                 style={styles.menuItem}
                 anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
                 rightIcon={<IconButton><ArrowDropDown /></IconButton>}
-                menuItems={DropDown}
+                menuItems={DropDownMenu}
                 />
             ) : (
               <MenuItem
