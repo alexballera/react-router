@@ -20,6 +20,7 @@ import Logo from '../../static/images/disney-logo.jpg'
 import './styles.scss'
 import styles from './styles.jsx'
 import DropDownMenu from './DropDown.jsx'
+import data from '../../data'
 
 const ScrollLink = Scroll.Link
 const scrollSpy = Scroll.scrollSpy
@@ -85,7 +86,7 @@ class Navigation extends React.Component {
           <div className='navbar-desktop hide-on-med-and-down' >
             { this.state.value === 1 ? (
               <MenuItem
-                primaryText='Home'
+                primaryText={data.menu.item1}
                 style={styles.menuItem}
                 anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
                 rightIcon={<IconButton><ArrowDropDown /></IconButton>}
@@ -93,25 +94,25 @@ class Navigation extends React.Component {
                 />
             ) : (
               <MenuItem
-                primaryText='Home'
+                primaryText={data.menu.item1}
                 style={styles.menuItem}
                 containerElement={<Link to='/' />}
                 onClick={this.displayHome}
                 />
             )}
             <MenuItem
-              primaryText='Topics'
+              primaryText={data.menu.item2}
               onClick={this.handleChange}
               style={styles.menuItem}
               containerElement={<NavLink to='/topics' />}
               />
             <MenuItem
-              primaryText='About'
+              primaryText={data.menu.item3}
               onClick={this.handleChange}
               style={styles.menuItem}
               containerElement={<NavLink to='/about' />} />
             <MenuItem
-              primaryText='Blog'
+              primaryText={data.menu.item4}
               onClick={this.handleChange}
               style={styles.menuItem}
               containerElement={<NavLink to='/blog' />} />
@@ -126,14 +127,14 @@ class Navigation extends React.Component {
         >
           { this.state.value < 2 ? (
             <MenuItem
-              primaryText='Home'
+              primaryText={data.menu.item1}
               style={styles.menuItem}
               rightIcon={<IconButton><ArrowForward /></IconButton>}
               menuItems={
               [
                 <MenuItem
                   onTouchTap={this.handleClose}
-                  primaryText='Sección 1'
+                  primaryText={data.dropdown.item1}
                   style={styles.menuItem}
                   containerElement={
                     <ScrollLink activeClass='active'to='section1' spy smooth duration={500} />
@@ -141,7 +142,7 @@ class Navigation extends React.Component {
                   />,
                 <MenuItem
                   onTouchTap={this.handleClose}
-                  primaryText='Sección 2'
+                  primaryText={data.dropdown.item2}
                   style={styles.menuItem}
                   containerElement={
                     <ScrollLink activeClass='active' to='section2' spy smooth duration={500} />
@@ -149,7 +150,7 @@ class Navigation extends React.Component {
                   />,
                 <MenuItem
                   onTouchTap={this.handleClose}
-                  primaryText='Sección 3'
+                  primaryText={data.dropdown.item3}
                   style={styles.menuItem}
                   containerElement={
                     <ScrollLink activeClass='active' to='section3' spy smooth duration={500} />
@@ -157,7 +158,7 @@ class Navigation extends React.Component {
                   />,
                 <MenuItem
                   onTouchTap={this.handleClose}
-                  primaryText='Sección 4'
+                  primaryText={data.dropdown.item4}
                   style={styles.menuItem}
                   containerElement={
                     <ScrollLink activeClass='active' to='section4' spy smooth duration={500} />
@@ -169,7 +170,7 @@ class Navigation extends React.Component {
             ) : (
               <MenuItem
                 onTouchTap={this.handleClose}
-                primaryText='Home'
+                primaryText={data.menu.item1}
                 style={styles.menuItem}
                 containerElement={<Link to='/' />}
                 onClick={this.displayHome}
@@ -179,7 +180,7 @@ class Navigation extends React.Component {
           <MenuItem
             onTouchTap={this.handleClose}
             onClick={this.handleChange}
-            primaryText='Topics'
+            primaryText={data.menu.item2}
             style={styles.menuItem}
             containerElement={<NavLink to='/topics' />}
             />
@@ -187,7 +188,7 @@ class Navigation extends React.Component {
           <MenuItem
             onTouchTap={this.handleClose}
             onClick={this.handleChange}
-            primaryText='About'
+            primaryText={data.menu.item3}
             style={styles.menuItem}
             containerElement={<NavLink to='/about' />}
             />
@@ -195,7 +196,7 @@ class Navigation extends React.Component {
           <MenuItem
             onTouchTap={this.handleClose}
             onClick={this.handleChange}
-            primaryText='Blog'
+            primaryText={data.menu.item4}
             style={styles.menuItem}
             containerElement={<NavLink to='/blog' />}
             />

@@ -29,7 +29,7 @@ class Blog extends React.Component {
             translateY={'1rem'}
             delay={(e, i) => i * 1000}
             >
-            <h1 className='blog-title titulo'>Página Blog</h1>
+            <h1 className='blog-title titulo'>Contáctame</h1>
           </Anime>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           Dolorem mollitia, quam pariatur vero quia tempore minus, nam,
