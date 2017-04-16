@@ -34,12 +34,12 @@ class Navigation extends React.Component {
     super(props)
     this.state = {
       open: false,
-      value: 1
+      with: true
     }
     this.handleToggle = this.handleToggle.bind(this)
     this.handleClose = this.handleClose.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.displayHome = this.displayHome.bind(this)
+    this.withoutDropdown = this.withoutDropdown.bind(this)
+    this.withDropdown = this.withDropdown.bind(this)
   }
   componentWillMount () {
     console.log('Se ejecuta antes de inyectar el DOM, estoy en navigation.component')
@@ -58,12 +58,12 @@ class Navigation extends React.Component {
     this.setState({open: false})
   }
 
-  handleChange () {
-    this.setState({value: 2})
+  withoutDropdown () {
+    this.setState({with: false})
   }
 
-  displayHome () {
-    this.setState({value: 1})
+  withDropdown () {
+    this.setState({with: true})
   }
 
   render () {
@@ -73,7 +73,7 @@ class Navigation extends React.Component {
           className='navbar-menu'
           style={styles.menu}
           desktop
-          onChange={this.handleChange}
+          onChange={this.withoutDropdown}
           >
           <MenuItem
             primaryText={<IconButton><MenuIcon /></IconButton>}
@@ -88,7 +88,7 @@ class Navigation extends React.Component {
             containerElement={<NavLink to='/' />}
             />
           <div className='navbar-desktop hide-on-med-and-down' >
-            { this.state.value === 1 ? (
+            { this.state.with ? (
               <MenuItem
                 primaryText={data.menu.item1.title}
                 style={styles.menuItem}
@@ -101,23 +101,23 @@ class Navigation extends React.Component {
                 primaryText={data.menu.item1.title}
                 style={styles.menuItem}
                 containerElement={<Link to={data.menu.item1.url} />}
-                onClick={this.displayHome}
+                onClick={this.withDropdown}
                 />
             )}
             <MenuItem
               primaryText={data.menu.item2.title}
-              onClick={this.handleChange}
+              onClick={this.withoutDropdown}
               style={styles.menuItem}
               containerElement={<NavLink to={data.menu.item2.url} />}
               />
             <MenuItem
               primaryText={data.menu.item3.title}
-              onClick={this.handleChange}
+              onClick={this.withoutDropdown}
               style={styles.menuItem}
               containerElement={<NavLink to={data.menu.item3.url} />} />
             <MenuItem
               primaryText={data.menu.item4.title}
-              onClick={this.handleChange}
+              onClick={this.withoutDropdown}
               style={styles.menuItem}
               containerElement={<NavLink to={data.menu.item4.url} />} />
           </div>
@@ -127,9 +127,9 @@ class Navigation extends React.Component {
           width={200}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
-          onChange={this.handleChange}
+          onChange={this.withoutDropdown}
         >
-          { this.state.value < 2 ? (
+          { this.state.with ? (
             <MenuItem
               primaryText={data.menu.item1.title}
               style={styles.menuItem}
@@ -141,7 +141,13 @@ class Navigation extends React.Component {
                   primaryText={data.dropdownMenuScrollSections.item1.title}
                   style={styles.menuItem}
                   containerElement={
-                    <ScrollLink activeClass='active'to='section1' spy smooth duration={500} />
+                    <ScrollLink
+                      spy
+                      smooth
+                      duration={500}
+                      activeClass='active'
+                      to={data.dropdownMenuScrollSections.item1.url}
+                      />
                     }
                   />,
                 <MenuItem
@@ -149,7 +155,13 @@ class Navigation extends React.Component {
                   primaryText={data.dropdownMenuScrollSections.item2.title}
                   style={styles.menuItem}
                   containerElement={
-                    <ScrollLink activeClass='active' to='section2' spy smooth duration={500} />
+                    <ScrollLink
+                      spy
+                      smooth
+                      duration={500}
+                      activeClass='active'
+                      to={data.dropdownMenuScrollSections.item2.url}
+                      />
                     }
                   />,
                 <MenuItem
@@ -157,7 +169,13 @@ class Navigation extends React.Component {
                   primaryText={data.dropdownMenuScrollSections.item3.title}
                   style={styles.menuItem}
                   containerElement={
-                    <ScrollLink activeClass='active' to='section3' spy smooth duration={500} />
+                    <ScrollLink
+                      spy
+                      smooth
+                      duration={500}
+                      activeClass='active'
+                      to={data.dropdownMenuScrollSections.item3.url}
+                      />
                     }
                   />,
                 <MenuItem
@@ -165,7 +183,13 @@ class Navigation extends React.Component {
                   primaryText={data.dropdownMenuScrollSections.item4.title}
                   style={styles.menuItem}
                   containerElement={
-                    <ScrollLink activeClass='active' to='section4' spy smooth duration={500} />
+                    <ScrollLink
+                      spy
+                      smooth
+                      duration={500}
+                      activeClass='active'
+                      to={data.dropdownMenuScrollSections.item4.url}
+                      />
                     }
                   />
               ]
@@ -177,13 +201,13 @@ class Navigation extends React.Component {
                 primaryText={data.menu.item1.title}
                 style={styles.menuItem}
                 containerElement={<Link to={data.menu.item1.url} />}
-                onClick={this.displayHome}
+                onClick={this.withDropdown}
                 />
             )}
           <Divider />
           <MenuItem
             onTouchTap={this.handleClose}
-            onClick={this.handleChange}
+            onClick={this.withoutDropdown}
             primaryText={data.menu.item2.title}
             style={styles.menuItem}
             containerElement={<NavLink to={data.menu.item2.url} />}
@@ -191,7 +215,7 @@ class Navigation extends React.Component {
           <Divider />
           <MenuItem
             onTouchTap={this.handleClose}
-            onClick={this.handleChange}
+            onClick={this.withoutDropdown}
             primaryText={data.menu.item3.title}
             style={styles.menuItem}
             containerElement={<NavLink to={data.menu.item3.url} />}
@@ -199,8 +223,8 @@ class Navigation extends React.Component {
           <Divider />
           <MenuItem
             onTouchTap={this.handleClose}
-            onClick={this.handleChange}
-            primaryText={data.menu.item4.url}
+            onClick={this.withoutDropdown}
+            primaryText={data.menu.item4.title}
             style={styles.menuItem}
             containerElement={<NavLink to={data.menu.item4.url} />}
             />
