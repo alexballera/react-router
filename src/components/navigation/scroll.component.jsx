@@ -3,6 +3,9 @@
 import React from 'react'
 import Scroll from 'react-scroll'
 
+// Datos
+import data from '../../data/navigation.data'
+
 // Secciones
 import Seccion1 from '../home/sections/section1.jsx'
 import Seccion2 from '../home/sections/section2.jsx'
@@ -24,19 +27,19 @@ class Section extends React.Component {
     return (
       <div>
 
-        <Element name='section1' className='element' >
+        <Element name={data.dropdownMenuScrollSections.item1.name} className='element' >
           <Seccion1 />
         </Element>
 
-        <Element name='section2' className='element' >
+        <Element name={data.dropdownMenuScrollSections.item2.name} className='element' >
           <Seccion2 />
         </Element>
 
-        <Element name='section3' className='element' >
+        <Element name={data.dropdownMenuScrollSections.item3.name} className='element' >
           <Seccion3 />
         </Element>
 
-        <Element name='section4' className='element' >
+        <Element name={data.dropdownMenuScrollSections.item4.name} className='element' >
           <Seccion4 />
         </Element>
 
