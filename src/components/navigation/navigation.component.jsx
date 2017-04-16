@@ -144,7 +144,7 @@ class Navigation extends React.Component {
                     <ScrollLink
                       spy
                       smooth
-                      duration={500}
+                      duration={1000}
                       activeClass='active'
                       to={data.dropdownMenuScrollSections.item1.url}
                       />
@@ -158,7 +158,7 @@ class Navigation extends React.Component {
                     <ScrollLink
                       spy
                       smooth
-                      duration={500}
+                      duration={1000}
                       activeClass='active'
                       to={data.dropdownMenuScrollSections.item2.url}
                       />
@@ -172,7 +172,7 @@ class Navigation extends React.Component {
                     <ScrollLink
                       spy
                       smooth
-                      duration={500}
+                      duration={1000}
                       activeClass='active'
                       to={data.dropdownMenuScrollSections.item3.url}
                       />
@@ -186,7 +186,7 @@ class Navigation extends React.Component {
                     <ScrollLink
                       spy
                       smooth
-                      duration={500}
+                      duration={1000}
                       activeClass='active'
                       to={data.dropdownMenuScrollSections.item4.url}
                       />
