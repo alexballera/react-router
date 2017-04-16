@@ -71,6 +71,7 @@ class Navigation extends React.Component {
     this.handleToggle = this.handleToggle.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.displayHome = this.displayHome.bind(this)
   }
 
   componentDidMount () {
@@ -85,14 +86,12 @@ class Navigation extends React.Component {
     this.setState({open: false})
   }
 
-  handleChange (event, index, value) {
+  handleChange () {
     this.setState({value: 2})
-    console.log(this.state.value)
   }
 
-  displayHome (event, index, value) {
+  displayHome () {
     this.setState({value: 1})
-    console.log(this.state.value)
   }
 
   render () {
