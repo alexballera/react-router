@@ -55,4 +55,4 @@ setTimeout(() => {
     <App />,
     document.getElementById('app')
   )
-}, 700)
+}, 1000)
