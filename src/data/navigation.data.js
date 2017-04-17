@@ -1,26 +1,28 @@
 'use strict'
 
+// const baseUri = '/react-webpack-materialize/'
+const baseUri = '/'
 const data = {
   menu: {
     item1: {
       id: 1,
       title: 'Home',
-      url: '/'
+      url: baseUri
     },
     item2: {
       id: 1,
       title: 'Topics',
-      url: '/topics'
+      url: baseUri + 'topics'
     },
     item3: {
       id: 1,
       title: 'About',
-      url: '/about'
+      url: baseUri + 'about'
     },
     item4: {
       id: 1,
       title: 'Contáctame',
-      url: '/contactame'
+      url: baseUri + 'contactame'
     }
   },
   dropdownMenuScrollSections: {

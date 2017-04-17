@@ -16,7 +16,6 @@ import '../node_modules/materialize-css/sass/materialize.scss'
 import '../node_modules/materialize-css/dist/js/materialize.js'
 
 // Components
-// import Routers from './router-ghpages.jsx'
 import Routers from './router.jsx'
 import CustomDOM from './static/js/custom-dom'
 import Loading from './components/spinner/spinner.component.jsx'

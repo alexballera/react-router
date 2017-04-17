@@ -81,7 +81,8 @@ class Navigation extends React.Component {
             primaryText={<img src={Logo} />}
             style={styles.menuItem}
             className='navbar-logo'
-            containerElement={<NavLink to='/' />}
+            containerElement={<NavLink to={data.menu.item1.url} />}
+            onClick={this.withDropdown}
             />
           <div className='navbar-desktop hide-on-med-and-down' >
             { this.state.with ? (
