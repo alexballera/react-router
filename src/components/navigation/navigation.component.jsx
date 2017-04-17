@@ -13,7 +13,7 @@ import {
 } from 'material-ui'
 
 // Componentes
-import DropDownMenu from './dropdownMenu.component.jsx'
+import DropDownMenu from './dropdown.component.jsx'
 
 // Datos
 import data from '../../data/navigation.data'
@@ -128,7 +128,7 @@ class Navigation extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
           onChange={this.withoutDropdown}
-        >
+          >
           { this.state.with ? (
             <MenuItem
               primaryText={data.menu.item1.title}
