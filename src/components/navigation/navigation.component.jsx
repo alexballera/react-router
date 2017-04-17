@@ -41,13 +41,9 @@ class Navigation extends React.Component {
     this.withoutDropdown = this.withoutDropdown.bind(this)
     this.withDropdown = this.withDropdown.bind(this)
   }
-  componentWillMount () {
-    console.log('Se ejecuta antes de inyectar el DOM, estoy en navigation.component')
-  }
 
   componentDidMount () {
     scrollSpy.update()
-    console.log('Se ejecuta luego de inyectar el DOM, ideal para AJAX y agregar JQuery')
   }
 
   handleToggle () {

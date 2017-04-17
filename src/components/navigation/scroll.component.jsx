@@ -28,7 +28,7 @@ class Section extends React.Component {
       <div>
 
         <Element name={data.dropdownMenuScrollSections.item1.name} className='element' >
-          <Seccion1 />
+          <Seccion1 title='Sección 1' />
         </Element>
 
         <Element name={data.dropdownMenuScrollSections.item2.name} className='element' >

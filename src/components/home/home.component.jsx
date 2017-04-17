@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet'
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import Anime from 'react-anime'
 
-import ScrollNavigation from '../navigation/scroll.component.jsx'
+import Sections from '../navigation/scroll.component.jsx'
 
 // Estáticos
 import './home.scss'
@@ -41,7 +41,7 @@ class Home extends React.Component {
                 <h2 className='sub-titulo' >Subtitulo agregando estilo</h2>
                 <img className='imagenHome' src={imagen} />
               </div>
-              <ScrollNavigation />
+              <Sections />
             </ReactCSSTransitionGroup>
           </main>
         </div>
