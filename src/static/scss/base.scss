@@ -12,6 +12,11 @@ h1 {
 
 .container {
   padding-top: $heigth-navbar;
+
+  .row {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 .active {

@@ -17,7 +17,7 @@ import data from './data/navigation.data'
 import Home from './components/home/home.component.jsx'
 import Topics from './components/topics/topic.component.jsx'
 import About from './components/about/about.component.jsx'
-import Contactame from './components/blog/blog.component.jsx'
+import Contactame from './components/contacto/contacto.component.jsx'
 import NotFound from './components/NotFound/NotFound.component.jsx'
 
 class Routers extends React.Component {
