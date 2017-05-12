@@ -8,7 +8,7 @@ module.exports = (env) => {
   return merge(base(), {
     devServer: {
       host: '0.0.0.0',
-      port: 8080,
+      port: 3000,
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true,
       stats: 'errors-only',

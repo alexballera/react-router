@@ -46,7 +46,7 @@ module.exports = () => {
 
         // Estilos
         {
-          test: /\.scss$/,
+          test: /\.(scss|css)$/,
           loader: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             filename: 'style.css',

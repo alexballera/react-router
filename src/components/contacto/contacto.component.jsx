@@ -4,8 +4,10 @@ import React from 'react'
 import {Helmet} from 'react-helmet'
 
 // Componentes
-import FormMaterializeReact from '../formularios/FormMaterializeReact.component.jsx'
-// import FormMaterializeUI from '../formularios/FormMaterializeUI.component.jsx'
+// import FormContainer from '../formularios/formcontainer.jsx'
+// import FormContainer from '../formularios/formulario.component.jsx'
+// import FormContainer from '../formularios/FormMaterializeReact.component.jsx'
+// import FormContainer from '../formularios/FormMaterializeUI.component.jsx'
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import Anime from 'react-anime'
 
@@ -40,7 +42,7 @@ class Blog extends React.Component {
             Dolorem mollitia, quam pariatur vero quia tempore minus, nam,
             esse quidem perferendis totam iste saepe soluta reprehenderit
             consectetur iusto. Praesentium, dolore, minima?</p>
-            <FormMaterializeReact />
+            {/* <FormContainer /> */}
             {/* <br />
             <FormMaterializeUI /> */}
           </ReactCSSTransitionGroup>
